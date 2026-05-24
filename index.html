@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium developer portfolio of Mohan Prabu K, a Full Stack, AI, Web3, Cloud and Blockchain developer from Salem, Tamil Nadu, India.">
+  <meta name="keywords" content="Mohan Prabu K, Full Stack Developer, AI Developer, Web3 Developer, Blockchain Developer, Portfolio">
+  <meta name="author" content="Mohan Prabu K">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:title" content="Mohan Prabu K - Developer Portfolio">
+  <meta property="og:description" content="Recruiter-ready portfolio showcasing full-stack, AI, Web3 and cloud projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80">
+  <title>Mohan Prabu K | Full Stack, AI & Web3 Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__orb">
+      <span>MP</span>
+    </div>
+    <p class="loader__name">Mohan Prabu K</p>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <strong id="loaderPercent">0%</strong>
+  </div>
+
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Mohan Prabu K home">
+        <span>M</span>Mohan
+      </a>
+      <div class="nav__menu" id="navMenu">
+        <a href="#home" class="nav__link active">Home</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#certifications" class="nav__link">Certifications</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle light mode"><i class="bx bx-moon"></i></button>
+        <button class="icon-btn nav__toggle" id="navToggle" aria-label="Open menu"><i class="bx bx-menu-alt-right"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="floating-shape shape-one"></div>
+      <div class="floating-shape shape-two"></div>
+      <div class="floating-shape shape-three"></div>
+      <div class="container hero__grid">
+        <div class="hero__content reveal-left">
+          <span class="eyebrow">Hello recruiters, I am</span>
+          <h1>Mohan Prabu K</h1>
+          <h2 class="hero__headline">I build scalable AI, Full-Stack & Web3 applications.</h2>
+          <p class="hero__role">Focused on <span class="typed-text"></span></p>
+          <p>
+            Building modern, scalable, and intelligent applications with
+            Full-Stack, AI, and Blockchain technologies.
+          </p>
+          <div class="hero__meta">
+            <span><i class="bx bx-map"></i>Salem, Tamil Nadu, India</span>
+            <span><i class="bx bx-code-curly"></i>Startup-ready builder</span>
+          </div>
+          <div class="hero__buttons">
+            <a href="#contact" class="btn btn--primary">Hire Me <i class="bx bx-right-arrow-alt"></i></a>
+            <button class="btn btn--ghost" id="openDownloadOptions" type="button">Download CV <i class="bx bx-download"></i></button>
+            <button class="btn btn--ghost" id="openResumePreview" type="button">Preview Resume <i class="bx bx-show"></i></button>
+          </div>
+          <div class="socials" aria-label="Social links">
+            <a href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+            <a href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="hero__visual reveal-right">
+          <div class="profile-card" data-tilt data-tilt-max="8">
+            <img src="assets/images/mohan-professional-photo.png" alt="Mohan Prabu K professional profile photo" loading="eager">
+            <div class="profile-card__badge"><i class="bx bx-bolt-circle"></i> Available for work</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section-sm" aria-label="Portfolio statistics">
+      <div class="container stats__grid">
+        <article class="stat-card" data-tilt><strong data-count="3">0</strong><span>Featured Projects</span></article>
+        <article class="stat-card" data-tilt><strong data-count="14">0</strong><span>Technologies</span></article>
+        <article class="stat-card" data-tilt><strong data-count="5">0</strong><span>Certifications</span></article>
+        <article class="stat-card" data-tilt><strong data-count="3">0</strong><span>Internships</span></article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container split">
+        <div class="about__image reveal-left">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Code editor with modern web application code" loading="lazy">
+        </div>
+        <div class="section-copy reveal-right">
+          <span class="eyebrow">About Me</span>
+          <h2 class="section-title">Developer with product thinking and execution speed.</h2>
+          <p>
+            Aspiring Full-Stack, AI, and Web3 developer with practical experience
+            building AI-driven and web-based applications. Proficient in Python and
+            JavaScript, with formal Python training and a strong foundation in machine
+            learning, backend systems, and scalable real-world solutions.
+          </p>
+          <p>
+            My career objective is to contribute to startups and tech companies by
+            building impactful digital products using AI, Cloud, Full-Stack, and Web3
+            technologies.
+          </p>
+          <a href="#projects" class="btn btn--primary">Read More <i class="bx bx-layer"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee section-sm" aria-label="Technology stack">
+      <div class="marquee__track">
+        <span><i class="bx bxl-html5"></i>HTML</span>
+        <span><i class="bx bxl-css3"></i>CSS</span>
+        <span><i class="bx bxl-javascript"></i>JavaScript</span>
+        <span><i class="bx bxl-react"></i>React</span>
+        <span><i class="bx bx-mobile-alt"></i>Flutter</span>
+        <span><i class="bx bxl-python"></i>Python</span>
+        <span><i class="bx bx-server"></i>Flask</span>
+        <span><i class="bx bxl-mongodb"></i>MongoDB</span>
+        <span><i class="bx bxl-firebase"></i>Firebase</span>
+        <span><i class="bx bx-cube-alt"></i>Solidity</span>
+        <span><i class="bx bx-data"></i>SQL</span>
+        <span><i class="bx bxl-git"></i>Git</span>
+        <span><i class="bx bxl-github"></i>GitHub</span>
+      </div>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Skill Matrix</span>
+          <h2 class="section-title">Full-stack foundations with AI and Web3 edge.</h2>
+        </div>
+        <div class="skills__grid">
+          <article class="skill-card reveal-up" data-tilt>
+            <i class="bx bx-layout"></i><h3>Frontend</h3>
+            <div class="skill"><span>HTML</span><b>95%</b><div><em data-width="95"></em></div></div>
+            <div class="skill"><span>CSS</span><b>92%</b><div><em data-width="92"></em></div></div>
+            <div class="skill"><span>JavaScript</span><b>88%</b><div><em data-width="88"></em></div></div>
+            <div class="skill"><span>React</span><b>78%</b><div><em data-width="78"></em></div></div>
+            <div class="skill"><span>Flutter</span><b>82%</b><div><em data-width="82"></em></div></div>
+          </article>
+          <article class="skill-card reveal-up" data-tilt>
+            <i class="bx bx-data"></i><h3>Backend</h3>
+            <div class="skill"><span>Python</span><b>87%</b><div><em data-width="87"></em></div></div>
+            <div class="skill"><span>Flask</span><b>82%</b><div><em data-width="82"></em></div></div>
+            <div class="skill"><span>MongoDB</span><b>78%</b><div><em data-width="78"></em></div></div>
+            <div class="skill"><span>Firebase</span><b>80%</b><div><em data-width="80"></em></div></div>
+            <div class="skill"><span>REST APIs</span><b>78%</b><div><em data-width="78"></em></div></div>
+          </article>
+          <article class="skill-card reveal-up" data-tilt>
+            <i class="bx bx-brain"></i><h3>AI/ML</h3>
+            <div class="skill"><span>AI Workflows</span><b>84%</b><div><em data-width="84"></em></div></div>
+            <div class="skill"><span>Data Processing</span><b>76%</b><div><em data-width="76"></em></div></div>
+            <div class="skill"><span>Automation</span><b>83%</b><div><em data-width="83"></em></div></div>
+            <div class="skill"><span>Jupyter Notebook</span><b>74%</b><div><em data-width="74"></em></div></div>
+          </article>
+          <article class="skill-card reveal-up" data-tilt>
+            <i class="bx bx-link-alt"></i><h3>Blockchain</h3>
+            <div class="skill"><span>Solidity</span><b>75%</b><div><em data-width="75"></em></div></div>
+            <div class="skill"><span>Smart Contracts</span><b>72%</b><div><em data-width="72"></em></div></div>
+            <div class="skill"><span>Web3 Concepts</span><b>80%</b><div><em data-width="80"></em></div></div>
+          </article>
+          <article class="skill-card reveal-up" data-tilt>
+            <i class="bx bx-wrench"></i><h3>Tools</h3>
+            <div class="skill"><span>GitHub</span><b>86%</b><div><em data-width="86"></em></div></div>
+            <div class="skill"><span>Tailwind CSS</span><b>82%</b><div><em data-width="82"></em></div></div>
+            <div class="skill"><span>VS Code</span><b>90%</b><div><em data-width="90"></em></div></div>
+            <div class="skill"><span>DSA & OOP</span><b>76%</b><div><em data-width="76"></em></div></div>
+            <div class="skill"><span>Deployment</span><b>78%</b><div><em data-width="78"></em></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning section">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Currently Learning</span>
+          <h2 class="section-title">Sharpening the stack for production-ready work.</h2>
+        </div>
+        <div class="cards-grid four">
+          <article class="focus-card reveal-up" data-tilt><i class="bx bxl-react"></i><h3>Advanced React</h3><p>Component architecture, state patterns, hooks, performance, and scalable UI systems.</p></article>
+          <article class="focus-card reveal-up" data-tilt><i class="bx bx-cloud-upload"></i><h3>Cloud Deployment</h3><p>Secure deployments, hosting workflows, environment setup, and uptime-focused practices.</p></article>
+          <article class="focus-card reveal-up" data-tilt><i class="bx bx-shield-quarter"></i><h3>Smart Contract Security</h3><p>Safer Solidity patterns, common attack risks, and trust-first decentralized workflows.</p></article>
+          <article class="focus-card reveal-up" data-tilt><i class="bx bx-brain"></i><h3>AI Model Integration</h3><p>Connecting ML outputs to clean product interfaces with practical backend logic.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline section" id="experience">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Experience</span>
+          <h2 class="section-title">A learning path shaped around real-world building.</h2>
+        </div>
+        <div class="timeline__list">
+          <article class="timeline__item reveal-left"><span></span><h3>R P Sarathy Institute of Technology</h3><p>B.Tech in Artificial Intelligence and Data Science, 2024 - 2028. CGPA: 8.01.</p></article>
+          <article class="timeline__item reveal-right"><span></span><h3>Flutter Developer Intern - She Software Solutions</h3><p>Current role developing cross-platform mobile apps with Flutter and Dart, responsive UI/UX, API integration, debugging, performance improvements, clean architecture, and Git workflows.</p></article>
+          <article class="timeline__item reveal-left"><span></span><h3>AI Intern - ZEAI SOFT</h3><p>Remote, Chennai, Jan 2025. Worked on responsive frontend modules, UI fixes, debugging, teamwork, version control, performance, and usability improvements.</p></article>
+          <article class="timeline__item reveal-right"><span></span><h3>Blockchain Developer Intern - CODTECH IT Solutions</h3><p>Remote, Hyderabad, Jun 2025 - Jul 2025. Learned smart contract development, DApps, Web3 workflows, decentralized architecture, and blockchain fundamentals.</p></article>
+          <article class="timeline__item reveal-left"><span></span><h3>Major Projects & Certifications</h3><p>Built AI, full-stack, and blockchain projects while earning Python, NSS, Deloitte, and Hindi Praveshika certifications.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Services</span>
+          <h2 class="section-title">What I can build for teams.</h2>
+        </div>
+        <div class="cards-grid three">
+          <article class="service-card reveal-up" data-tilt><i class="bx bx-code-alt"></i><h3>Full Stack Web Development</h3><p>Responsive web apps with clean UI, practical backend logic, databases, auth, and deployment-ready structure.</p><a href="#contact">Read More</a></article>
+          <article class="service-card reveal-up" data-tilt><i class="bx bx-chip"></i><h3>AI Application Development</h3><p>AI-powered tools, automation flows, prediction interfaces, and data-assisted features for real use cases.</p><a href="#contact">Read More</a></article>
+          <article class="service-card reveal-up" data-tilt><i class="bx bx-cube"></i><h3>Blockchain/Web3 Solutions</h3><p>Smart-contract based systems for voting, donation tracking, trust layers, and transparent records.</p><a href="#contact">Read More</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-hire section">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Why Hire Me?</span>
+          <h2 class="section-title">A developer profile built for fast-moving teams.</h2>
+        </div>
+        <div class="hire-grid">
+          <article class="hire-card reveal-up" data-tilt><i class="bx bx-rocket"></i><h3>Startup Mindset</h3><p>I focus on shipping useful features quickly, learning from feedback, and improving product quality with each iteration.</p></article>
+          <article class="hire-card reveal-up" data-tilt><i class="bx bx-layer"></i><h3>Full-Stack + AI + Web3</h3><p>My mix of frontend, backend, AI workflows, and blockchain fundamentals helps me build across product layers.</p></article>
+          <article class="hire-card reveal-up" data-tilt><i class="bx bx-briefcase"></i><h3>Internship Experience</h3><p>I have practical exposure to Flutter, AI, frontend, blockchain workflows, Git, and remote collaboration.</p></article>
+          <article class="hire-card reveal-up" data-tilt><i class="bx bx-bulb"></i><h3>Problem-Solving Focus</h3><p>I break unclear problems into clean interfaces, backend logic, measurable results, and usable demos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools section-sm">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Tools I Use</span>
+          <h2 class="section-title">Daily workflow tools for design, code, APIs, and databases.</h2>
+        </div>
+        <div class="tools-grid">
+          <article class="tool-pill reveal-up"><i class="bx bxl-visual-studio"></i><span>VS Code</span></article>
+          <article class="tool-pill reveal-up"><i class="bx bxl-github"></i><span>GitHub</span></article>
+          <article class="tool-pill reveal-up"><i class="bx bx-paper-plane"></i><span>Postman</span></article>
+          <article class="tool-pill reveal-up"><i class="bx bxl-firebase"></i><span>Firebase</span></article>
+          <article class="tool-pill reveal-up"><i class="bx bxl-mongodb"></i><span>MongoDB</span></article>
+          <article class="tool-pill reveal-up"><i class="bx bxl-figma"></i><span>Figma</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Featured Projects</span>
+          <h2 class="section-title">Recruiter-focused project showcase.</h2>
+        </div>
+        <div class="filter-bar reveal-up" role="tablist" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ai">AI</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+          <button class="filter-btn" data-filter="webapp">Web Apps</button>
+        </div>
+        <div class="projects__grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <section class="certifications section" id="certifications">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="eyebrow">Certifications</span>
+          <h2 class="section-title">Continuous learning proof.</h2>
+        </div>
+        <div class="cards-grid certificates">
+          <article class="cert-card reveal-up"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80" alt="Programming in Python certificate" loading="lazy"><h3>Programming in Python</h3><p>FutoGen Computer Education - Sep 2024</p></article>
+          <article class="cert-card reveal-up"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Deloitte Australia Data Analytics Job Simulation certificate" loading="lazy"><h3>Deloitte Australia Data Analytics</h3><p>Forage - Issued Jan 2026</p></article>
+          <article class="cert-card reveal-up"><img src="assets/images/nss-logo.svg" alt="NSS logo for Certificate A" loading="lazy"><h3>NSS Certificate A</h3><p>Directorate of School Education, Tamil Nadu - Apr 2024</p></article>
+          <article class="cert-card reveal-up"><img src="assets/images/nss-logo.svg" alt="NSS logo for Special Camp certificate" loading="lazy"><h3>NSS Special Camp</h3><p>Youth for Cleanliness - Nov 2022</p></article>
+          <article class="cert-card reveal-up"><img src="assets/images/hindi-exam-logo.svg" alt="Hindi Praveshika examination logo" loading="lazy"><h3>Hindi Praveshika Examination</h3><p>Level 5 Completed - Oct 2020</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container split">
+        <div class="section-copy reveal-left">
+          <span class="eyebrow">Contact</span>
+          <h2 class="section-title">Let us build something useful.</h2>
+          <div class="availability"><i class="bx bx-radio-circle-marked"></i>Open for internships, freelance projects, and collaborations</div>
+          <div class="contact-list">
+            <a href="mailto:mohanprabu1823@gmail.com"><i class="bx bx-envelope"></i>mohanprabu1823@gmail.com</a>
+            <a href="tel:+919884801823"><i class="bx bx-phone"></i>+91 9884801823</a>
+            <span><i class="bx bx-map"></i>Salem, Tamil Nadu, India</span>
+          </div>
+          <div class="contact-actions">
+            <a href="https://wa.me/919884801823" target="_blank" rel="noreferrer" class="btn btn--primary"><i class="bx bxl-whatsapp"></i>WhatsApp</a>
+            <button class="btn btn--ghost" id="copyEmail"><i class="bx bx-copy"></i>Copy Email</button>
+          </div>
+        </div>
+        <form class="contact-form reveal-right" id="contactForm" novalidate>
+          <label><span>Name</span><input type="text" name="name" placeholder="Your name" required minlength="2"></label>
+          <label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required></label>
+          <label><span>Subject</span><input type="text" name="subject" placeholder="Project or opportunity" required minlength="4"></label>
+          <label><span>Message</span><textarea name="message" rows="5" placeholder="Tell me what you want to build" required minlength="12"></textarea></label>
+          <button type="submit" class="btn btn--primary">Send Message <i class="bx bx-send"></i></button>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <a href="#home" class="logo"><span>M</span>Mohan</a>
+      <div class="footer__links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+        <a href="mailto:mohanprabu1823@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+      </div>
+      <p>Designed &amp; Developed by Mohan Prabu K</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bx bx-chevron-up"></i></button>
+
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" data-close-modal></div>
+    <article class="modal__content">
+      <button class="modal__close" data-close-modal aria-label="Close project details"><i class="bx bx-x"></i></button>
+      <img id="modalImage" src="" alt="" loading="lazy">
+      <div class="modal__body">
+        <span class="eyebrow" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <h3>Key Features</h3>
+        <ul id="modalFeatures"></ul>
+        <h3>Challenges Solved</h3>
+        <p id="modalChallenges"></p>
+        <h3>Metrics & Achievements</h3>
+        <ul id="modalMetrics"></ul>
+        <h3>Real-World Impact</h3>
+        <p id="modalImpact"></p>
+        <div class="tag-list" id="modalTags"></div>
+        <div class="modal__actions">
+          <a href="#" id="modalGithub" class="btn btn--ghost" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i>GitHub</a>
+          <a href="#" id="modalDemo" class="btn btn--primary" target="_blank" rel="noreferrer"><i class="bx bx-link-external"></i>Live Demo</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal" id="resumeModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
+    <div class="modal__backdrop" data-close-resume></div>
+    <article class="modal__content resume-preview">
+      <button class="modal__close" data-close-resume aria-label="Close resume preview"><i class="bx bx-x"></i></button>
+      <div class="modal__body">
+        <span class="eyebrow">Resume Preview</span>
+        <h2 id="resumeTitle">Mohan Prabu K</h2>
+        <p>Full-Stack, AI, Web3, Cloud & Blockchain Developer based in Salem, Tamil Nadu, India.</p>
+        <div class="resume-preview__grid">
+          <article><strong>Education</strong><span>B.Tech AI & DS, R P Sarathy Institute of Technology, CGPA 8.01</span></article>
+          <article><strong>Experience</strong><span>Flutter Developer Intern, AI Intern, Blockchain Developer Intern</span></article>
+          <article><strong>Core Skills</strong><span>Python, JavaScript, Flask, React, Flutter, Firebase, MongoDB, Solidity</span></article>
+          <article><strong>Projects</strong><span>Agro-Sense AI, Crypto Price Tracker, Blockchain Donation Tracking</span></article>
+        </div>
+        <div class="modal__actions">
+          <button class="btn btn--primary" type="button" data-open-download><i class="bx bx-download"></i>Download CV</button>
+          <a href="mailto:mohanprabu1823@gmail.com" class="btn btn--ghost"><i class="bx bx-envelope"></i>Email Me</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+
+  <div class="modal" id="downloadModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
+    <div class="modal__backdrop" data-close-download></div>
+    <article class="modal__content download-options">
+      <button class="modal__close" data-close-download aria-label="Close download options"><i class="bx bx-x"></i></button>
+      <div class="modal__body">
+        <span class="eyebrow">Choose Format</span>
+        <h2 id="downloadTitle">Download Mohan Prabu K Resume</h2>
+        <p>Select the format that works best for your hiring workflow.</p>
+        <div class="download-options__grid">
+          <a href="assets/resume/Mohan-Prabu-K-Resume.pdf" class="download-card" download>
+            <i class="bx bxs-file-pdf"></i>
+            <strong>Download PDF</strong>
+            <span>Best for HR sharing, previewing, and official submissions.</span>
+          </a>
+          <a href="assets/resume/Mohan-Prabu-K-Resume.docx" class="download-card" download>
+            <i class="bx bxs-file-doc"></i>
+            <strong>Download DOCX</strong>
+            <span>Best when editable document format is preferred.</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+

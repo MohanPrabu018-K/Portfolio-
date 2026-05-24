@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#052e2b"/>
+      <stop offset="0.52" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#164e63"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0.14"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect x="54" y="48" width="1092" height="654" rx="26" fill="#0f172a" stroke="#22d3ee" stroke-opacity=".35"/>
+  <text x="92" y="112" fill="#f8fafc" font-family="Poppins,Arial" font-size="34" font-weight="700">Agro-Sense AI Dashboard</text>
+  <text x="92" y="154" fill="#94a3b8" font-family="Poppins,Arial" font-size="18">Crop recommendation, disease detection, fertilizer planning</text>
+  <rect x="92" y="196" width="300" height="168" rx="18" fill="url(#card)" stroke="#22d3ee" stroke-opacity=".28"/>
+  <text x="122" y="252" fill="#f8fafc" font-family="Poppins,Arial" font-size="22" font-weight="700">Soil Health</text>
+  <text x="122" y="310" fill="#34d399" font-family="Poppins,Arial" font-size="52" font-weight="800">87%</text>
+  <rect x="438" y="196" width="300" height="168" rx="18" fill="url(#card)" stroke="#22d3ee" stroke-opacity=".28"/>
+  <text x="468" y="252" fill="#f8fafc" font-family="Poppins,Arial" font-size="22" font-weight="700">Crop Match</text>
+  <text x="468" y="310" fill="#22d3ee" font-family="Poppins,Arial" font-size="52" font-weight="800">92%</text>
+  <rect x="784" y="196" width="300" height="168" rx="18" fill="url(#card)" stroke="#22d3ee" stroke-opacity=".28"/>
+  <text x="814" y="252" fill="#f8fafc" font-family="Poppins,Arial" font-size="22" font-weight="700">Disease Risk</text>
+  <text x="814" y="310" fill="#fbbf24" font-family="Poppins,Arial" font-size="52" font-weight="800">Low</text>
+  <rect x="92" y="410" width="636" height="220" rx="18" fill="#111c33" stroke="#334155"/>
+  <polyline points="128,584 218,530 310,548 402,470 494,494 590,438 690,458" fill="none" stroke="#34d399" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="122" y="456" fill="#cbd5e1" font-family="Poppins,Arial" font-size="20" font-weight="700">Yield Intelligence Trend</text>
+  <rect x="766" y="410" width="318" height="220" rx="18" fill="#111c33" stroke="#334155"/>
+  <circle cx="840" cy="500" r="44" fill="#22d3ee" fill-opacity=".18" stroke="#22d3ee"/>
+  <circle cx="938" cy="500" r="44" fill="#34d399" fill-opacity=".18" stroke="#34d399"/>
+  <circle cx="1036" cy="500" r="44" fill="#a855f7" fill-opacity=".18" stroke="#a855f7"/>
+  <text x="802" y="590" fill="#cbd5e1" font-family="Poppins,Arial" font-size="18">ML powered recommendations</text>
+</svg>
