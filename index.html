@@ -3,328 +3,650 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Premium developer portfolio of Mohan Prabu K, a Full Stack, AI, Web3, Cloud and Blockchain developer from Salem, Tamil Nadu, India.">
-  <meta name="keywords" content="Mohan Prabu K, Full Stack Developer, AI Developer, Web3 Developer, Blockchain Developer, Portfolio">
+  <meta name="description" content="Mohan Prabu K — Full-Stack, AI & Web3 Developer. I build intelligent, real-world software products from idea to execution. Team Lead Intern @ SHE Software Solutions.">
   <meta name="author" content="Mohan Prabu K">
-  <meta name="theme-color" content="#0f172a">
-  <meta property="og:title" content="Mohan Prabu K - Developer Portfolio">
-  <meta property="og:description" content="Recruiter-ready portfolio showcasing full-stack, AI, Web3 and cloud projects.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Mohan Prabu K — Full-Stack • AI • Web3 Developer">
+  <meta property="og:description" content="I build intelligent, real-world software products from idea to execution. Team Lead Intern @ SHE Software Solutions.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80">
-  <title>Mohan Prabu K | Full Stack, AI & Web3 Developer</title>
-
+  <title>Mohan Prabu K | Full-Stack • AI • Web3 Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/images/mohan-professional-photo.png">
 </head>
 <body>
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
+  <a class="skip-link" href="#home">Skip to content</a>
 
-  <div class="loader" id="loader" role="status" aria-live="polite">
-    <div class="loader__orb">
-      <span>MP</span>
-    </div>
-    <p class="loader__name">Mohan Prabu K</p>
-    <div class="loader__bar"><span id="loaderBar"></span></div>
-    <strong id="loaderPercent">0%</strong>
+  <!-- Subtle ambient white background -->
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+    <span class="ambient-line ambient-line--1"></span>
+    <span class="ambient-line ambient-line--2"></span>
+    <canvas id="ambientCanvas"></canvas>
   </div>
 
-  <div id="particles-js" aria-hidden="true"></div>
+  <!-- Welcome experience -->
+  <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="Welcome">
+    <div class="welcome__inner">
+      <p class="welcome__eyebrow">Portfolio 2.0</p>
+      <h1 class="welcome__title">WELCOME TO<br>MY WORLD</h1>
+      <p class="welcome__sub">Clean. Minimal. Built like a product.</p>
+      <div class="welcome__bar" aria-hidden="true"><span id="welcomeBar"></span></div>
+      <button class="btn btn--primary welcome__enter" id="welcomeEnter" type="button">Enter <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></button>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="header" id="header">
     <nav class="nav container" aria-label="Main navigation">
-      <a href="#home" class="logo" aria-label="Mohan Prabu K home">
-        <span>M</span>Mohan
+      <a href="#home" class="logo" aria-label="Mohan Prabu K — home">
+        <span class="logo__mark" aria-hidden="true">M</span>
+        <span class="logo__text">Mohan Prabu K<em>Full-Stack • AI • Web3</em></span>
       </a>
       <div class="nav__menu" id="navMenu">
-        <a href="#home" class="nav__link active">Home</a>
+        <a href="#home" class="nav__link is-active">Home</a>
         <a href="#about" class="nav__link">About</a>
-        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#journey" class="nav__link">Journey</a>
         <a href="#experience" class="nav__link">Experience</a>
+        <a href="#skills" class="nav__link">Skills</a>
         <a href="#projects" class="nav__link">Projects</a>
-        <a href="#certifications" class="nav__link">Certifications</a>
         <a href="#contact" class="nav__link">Contact</a>
       </div>
       <div class="nav__actions">
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle light mode"><i class="bx bx-moon"></i></button>
-        <button class="icon-btn nav__toggle" id="navToggle" aria-label="Open menu"><i class="bx bx-menu-alt-right"></i></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle theme"><i class="bx bx-moon" aria-hidden="true"></i></button>
+        <button class="icon-btn nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><i class="bx bx-menu" aria-hidden="true"></i></button>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="floating-shape shape-one"></div>
-      <div class="floating-shape shape-two"></div>
-      <div class="floating-shape shape-three"></div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero hero--3d" id="home" aria-labelledby="heroTitle">
+      <div class="hero__depth" aria-hidden="true">
+        <span class="hero__orb"></span>
+        <span class="hero__ring"></span>
+        <span class="hero__gridlines"></span>
+      </div>
       <div class="container hero__grid">
-        <div class="hero__content reveal-left">
-          <span class="eyebrow">Hello recruiters, I am</span>
-          <h1>Mohan Prabu K</h1>
-          <h2 class="hero__headline">I build scalable AI, Full-Stack & Web3 applications.</h2>
-          <p class="hero__role">Focused on <span class="typed-text"></span></p>
-          <p>
-            Building modern, scalable, and intelligent applications with
-            Full-Stack, AI, and Blockchain technologies.
-          </p>
-          <div class="hero__meta">
-            <span><i class="bx bx-map"></i>Salem, Tamil Nadu, India</span>
-            <span><i class="bx bx-code-curly"></i>Startup-ready builder</span>
+        <div class="hero__content">
+          <p class="pill pill--live"><span class="pulse-dot" aria-hidden="true"></span> Team Lead Intern @ SHE Software Solutions</p>
+          <h1 id="heroTitle">MOHAN<br>PRABU K</h1>
+          <p class="hero__role">Software Developer &amp; Product Builder</p>
+          <p class="hero__tagline"><strong>I build intelligent, real-world software products from idea to execution.</strong></p>
+          <p class="hero__cred">Currently leading Full-Stack &amp; Data Analytics teams at SHE Software Solutions.</p>
+          <p class="hero__building"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> <strong>Currently building</strong> — TaxShield + Faculty Patent Verification System</p>
+          <p class="hero__meta">B.Tech AI &amp; Data Science • 2024–2028 • CGPA 8.01/10 • Salem, India</p>
+          <div class="hero__buttons">
+            <a href="#projects" class="btn btn--primary">View My Work <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <a href="assets/resume/Mohan_Prabu_K_Resume.pdf" class="btn btn--secondary" download><i class="bx bx-download" aria-hidden="true"></i> Download Resume</a>
+          </div>
+          <div class="hero__links">
+            <a href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer" class="hero-link"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</a>
+            <span class="hero-link__dot" aria-hidden="true"></span>
+            <a href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer" class="hero-link"><i class="bx bxl-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            <span class="hero-link__dot" aria-hidden="true"></span>
+            <a href="mailto:mohanprabu1823@gmail.com" class="hero-link"><i class="bx bx-envelope" aria-hidden="true"></i> Email</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero-portrait-scene" id="photoTilt" data-tilt-3d data-tilt-max="5" data-tilt-x="4">
+            <div class="hero-portrait-bg" data-px="1" aria-hidden="true"></div>
+            <div class="hero-portrait-dots" data-px="1" aria-hidden="true"></div>
+            <div class="hero-portrait-glow" data-px="1.5" aria-hidden="true"></div>
+            <div class="hero-portrait-orbit" data-px="1.5" aria-hidden="true"><span class="orbit-dot"></span></div>
+            <span class="hero-sphere hero-sphere--a" data-px="2" aria-hidden="true"></span>
+            <span class="hero-cube hero-cube--a" data-px="2" aria-hidden="true"></span>
+            <div class="hero-portrait-cutout" id="photoFrame" data-px="3">
+              <img src="assets/images/mohan-professional-cutout.webp" alt="Portrait photograph of Mohan Prabu K" fetchpriority="high" decoding="async">
+            </div>
+            <span class="hero-sphere hero-sphere--b" data-px="2" aria-hidden="true"></span>
+            <span class="hero-cube hero-cube--b" data-px="2" aria-hidden="true"></span>
+            <div class="hero-portrait-shadow" id="photoShadow" aria-hidden="true"></div>
+            <div class="hero-portrait-detail" data-px="4" aria-hidden="true"></div>
+          </div>
+          <p class="photo-caption">Team Lead Intern · SHE Software Solutions</p>
+        </div>
+      </div>
+      <a href="#snapshot" class="scroll-hint" aria-label="Scroll to recruiter snapshot">Scroll <i class="bx bx-chevron-down" aria-hidden="true"></i></a>
+    </section>
+
+    <!-- RECRUITER SNAPSHOT -->
+    <section class="snapshot" id="snapshot" aria-label="Recruiter snapshot">
+      <div class="container snapshot__grid snapshot--3d reveal" data-tilt-group>
+        <div class="snapshot__item"><strong>Team Lead Intern</strong><span>SHE Software Solutions</span></div>
+        <div class="snapshot__item"><strong>3 Projects</strong><span>Coordinated</span></div>
+        <div class="snapshot__item"><strong>AI + Full-Stack + Web3</strong><span>Development Areas</span></div>
+        <div class="snapshot__item"><strong>8.01 / 10</strong><span>CGPA</span></div>
+        <div class="snapshot__item"><strong>4</strong><span>Featured Projects</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="container split">
+        <div class="reveal">
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">01</span><span class="sec-sep">/</span> About</p>
+          <h2 class="section-title" id="aboutTitle">Engineer who ships real products, not just code.</h2>
+          <p class="lead">B.Tech Artificial Intelligence &amp; Data Science (2024–2028) building across full-stack, AI/ML, and Web3 — from idea to execution.</p>
+          <div class="about__points">
+            <span><i class="bx bx-check" aria-hidden="true"></i> Full-stack product development</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> AI / ML &amp; document intelligence</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> Web3 / smart contracts / DApps</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> Team leadership &amp; execution</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> Real company software in use</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> Continuous learning</span>
+          </div>
+          <div class="inline-actions">
+            <a href="#journey" class="btn btn--secondary">My Journey <i class="bx bx-book-open" aria-hidden="true"></i></a>
+            <a href="#experience" class="btn btn--link">Experience <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="about__card reveal">
+          <h3>At a glance</h3>
+          <dl>
+            <div><dt>Education</dt><dd>B.Tech AI &amp; DS, RP Sarathy Institute of Technology (CGPA 8.01) · HSLC, Bharathi Vidyalaya Hr. Sec. School</dd></div>
+            <div><dt>Current</dt><dd>Team Lead Intern @ SHE Software Solutions</dd></div>
+            <div><dt>Focus</dt><dd>Full-Stack • AI • Web3 • Product Engineering</dd></div>
+            <div><dt>Proof</dt><dd>Company system live in production use</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY BOOK -->
+    <section class="section section--tint" id="journey" aria-labelledby="journeyTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">02</span><span class="sec-sep">/</span> Journey · Signature Experience</p>
+          <h2 class="section-title" id="journeyTitle">MY JOURNEY</h2>
+          <p class="section-sub">From learning technology to building real-world products.</p>
+        </div>
+        <div class="book book--3d reveal" id="book" data-tilt-3d data-tilt-max="2">
+          <div class="book__frame">
+            <button class="book__nav book__nav--prev" id="bookPrev" type="button" aria-label="Previous chapter"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+            <div class="book__viewport">
+              <div class="book__spine" aria-hidden="true"></div>
+              <article class="book__page" id="bookPage" aria-live="polite" aria-atomic="true">
+                <p class="book__chapter" id="bookKicker">Chapter 01 / 07</p>
+                <p class="book__here" id="bookHere" hidden><span aria-hidden="true">→</span> You are here</p>
+                <h3 id="bookTitle">The Beginning</h3>
+                <p class="book__role" id="bookRole">B.Tech Artificial Intelligence &amp; Data Science • 2024–2028</p>
+                <p class="book__body" id="bookBody">RP Sarathy Institute of Technology. CGPA 8.01/10. Foundation in programming, data, and systems thinking.</p>
+                <ul class="book__list" id="bookList"></ul>
+                <p class="book__meta" id="bookMeta"></p>
+              </article>
+            </div>
+            <button class="book__nav book__nav--next" id="bookNext" type="button" aria-label="Next chapter"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="book__footer">
+            <div class="book__mnav" aria-label="Journey chapter navigation">
+              <button class="btn btn--secondary btn--sm book__mbtn" id="bookPrevM" type="button" aria-label="Previous chapter"><i class="bx bx-chevron-left" aria-hidden="true"></i> Prev</button>
+              <span class="book__counter" id="bookCounter" aria-live="polite">01 / 07</span>
+              <button class="btn btn--secondary btn--sm book__mbtn" id="bookNextM" type="button" aria-label="Next chapter">Next <i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="book__dots" id="bookDots" role="tablist" aria-label="Journey chapters"></div>
+            <p class="book__hint">Click • Arrow keys • Swipe on mobile</p>
+            <div class="book__progress" aria-hidden="true"><span id="bookProgress"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="expTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">03</span><span class="sec-sep">/</span> Experience</p>
+          <h2 class="section-title" id="expTitle">Real roles. Real responsibility.</h2>
+        </div>
+        <div class="exp-grid">
+          <article class="card card--featured card--she reveal" data-tilt-3d data-tilt-max="3">
+            <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Current</span><span class="card__date">June 2026 – Present</span></div>
+            <p class="eyebrow">Real-World Experience · SHE Software Solutions</p>
+            <h3>Team Lead Intern — Stipendiary</h3>
+            <p class="card__org">SHE Software Solutions</p>
+            <div class="she-stat"><strong>3</strong><span>Company<br>Projects</span></div>
+            <div class="tags tags--teams"><span>Full-Stack Team</span><span>Data Analytics Team</span></div>
+            <ul class="check-list">
+              <li>Task allocation &amp; project planning</li>
+              <li>Progress tracking &amp; team coordination</li>
+              <li>Execution ownership across 3 projects</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div class="card__top"><span class="status">Internship</span><span class="card__date">Mar 2026 – May 2026</span></div>
+            <h3>Flutter Developer Intern</h3>
+            <p class="card__org">SHE Software Solutions</p>
+            <p><strong>Employee Barcode Management System</strong> — Flutter + Firebase.</p>
+            <p class="note">Currently used by the company for employee and intern ID management.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__top"><span class="status">Remote</span><span class="card__date">June 2025 – July 2025</span></div>
+            <h3>Blockchain Developer Intern</h3>
+            <p class="card__org">CODTECH IT Solutions</p>
+            <ul class="check-list">
+              <li>Smart contracts</li>
+              <li>DApp development</li>
+              <li>Web3 fundamentals</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL WORLD -->
+    <section class="section section--tint" id="realworld" aria-labelledby="rwTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Proof of Work</p>
+          <h2 class="section-title" id="rwTitle">REAL-WORLD EXPERIENCE</h2>
+          <p class="section-sub">Real company → Real development → Real usage → Leadership</p>
+        </div>
+        <div class="rw-grid">
+          <article class="card reveal">
+            <p class="eyebrow">SHE Software Solutions</p>
+            <h3>Team Lead Intern</h3>
+            <p>Leading Full-Stack and Data Analytics teams across 3 company projects — planning, allocation, tracking, and delivery.</p>
+          </article>
+          <article class="card reveal">
+            <p class="eyebrow">Shipped &amp; In Use</p>
+            <h3>Employee Barcode Management System</h3>
+            <p><strong>Flutter + Firebase</strong></p>
+            <p>Currently used by the company for employee and intern ID management.</p>
+            <ol class="barcode-flow" aria-label="Barcode system flow">
+              <li>Employee / Intern</li>
+              <li>Barcode</li>
+              <li>Flutter Application</li>
+              <li>Firebase</li>
+              <li><strong>ID Management</strong></li>
+            </ol>
+          </article>
+        </div>
+        <div class="orgchart reveal" aria-label="SHE Software Solutions team structure">
+          <div class="org-lead" data-depth="14"><strong>Mohan Prabu K</strong><span>Team Lead</span></div>
+          <div class="org-split">
+            <div class="org-team" data-depth="8"><strong>Full-Stack Team</strong><span>3 Members</span></div>
+            <div class="org-team" data-depth="8"><strong>Data Analytics</strong><span>2 Members</span></div>
+          </div>
+          <div class="org-projects" data-depth="10"><strong>3 Company Projects</strong><span>Planning · Task Allocation · Coordination · Progress Tracking · Execution</span></div>
+        </div>
+        <ol class="flow-steps reveal" aria-label="How real-world experience flows">
+          <li><strong>Real company</strong><span>SHE Software Solutions</span></li>
+          <li><strong>Real development</strong><span>Flutter + Firebase system</span></li>
+          <li><strong>Real usage</strong><span>Live ID management</span></li>
+          <li><strong>Leadership</strong><span>3 projects coordinated</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CURRENTLY BUILDING -->
+    <section class="section" id="building" aria-labelledby="buildingTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Now</p>
+          <h2 class="section-title" id="buildingTitle">CURRENTLY BUILDING</h2>
+        </div>
+        <div class="building-grid">
+          <article class="card card--building building-scene reveal" data-btilt>
+            <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Currently Working</span></div>
+            <h3>TaxShield</h3>
+            <p class="card__org">Tax-Readiness Intelligence Platform</p>
+            <div class="building-visual" aria-hidden="true"><i class="bx bx-shield-quarter"></i><span class="bv-ring"></span></div>
+            <p>Evidence, obligations, risks, deadlines, scenarios, and a 0–100 readiness score.</p>
+            <a class="btn btn--link link--underline" href="#projects" data-goto-project="taxshield">View case study <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <span class="building-detail" aria-hidden="true"></span>
+          </article>
+          <article class="card card--building building-scene reveal" data-btilt>
+            <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Currently Working</span></div>
+            <h3>FPP</h3>
+            <p class="card__org">Faculty Patent Profile Verification System</p>
+            <div class="building-visual" aria-hidden="true"><span class="bv-doc"></span><i class="bx bx-scan"></i></div>
+            <p>OCR → extraction → verification → duplicate checks → structured review.</p>
+            <a class="btn btn--link link--underline" href="#projects" data-goto-project="fpp">View case study <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <span class="building-detail" aria-hidden="true"></span>
+          </article>
+        </div>
+        <ol class="dev-timeline reveal" aria-label="Development timeline">
+          <li><strong>Research</strong><span>Problem &amp; scope</span></li>
+          <li><strong>Architecture</strong><span>System design</span></li>
+          <li class="is-active"><strong>Development</strong><span>In progress</span></li>
+          <li><strong>Testing</strong><span>Real cases</span></li>
+          <li><strong>Refinement</strong><span>Iterate</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section--tint" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">05</span><span class="sec-sep">/</span> Skills</p>
+          <h2 class="section-title" id="skillsTitle">Categorized. No fake percentages.</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="card reveal"><h3>Languages</h3><div class="tags"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>HTML</span><span>CSS</span></div></article>
+          <article class="card reveal"><h3>Frontend</h3><div class="tags"><span>React.js</span><span>Next.js</span><span>Tailwind CSS</span><span>Flutter</span></div></article>
+          <article class="card reveal"><h3>Backend</h3><div class="tags"><span>Flask</span><span>REST APIs</span></div></article>
+          <article class="card reveal"><h3>AI / ML</h3><div class="tags"><span>Machine Learning</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Explainable AI</span><span>Generative AI</span><span>LLMs</span><span>Agentic AI</span></div></article>
+          <article class="card reveal"><h3>Blockchain / Web3</h3><div class="tags"><span>Solidity</span><span>Smart Contract Development</span><span>Web3.js</span><span>Polygon</span><span>DApps</span></div></article>
+          <article class="card reveal"><h3>Databases</h3><div class="tags"><span>PostgreSQL</span><span>MongoDB</span><span>Prisma</span><span>Firebase</span></div></article>
+          <article class="card reveal"><h3>Document Intelligence</h3><div class="tags"><span>OCR</span><span>OpenCV</span><span>Tesseract</span><span>pyzbar</span></div></article>
+          <article class="card reveal"><h3>Tools &amp; Deployment</h3><div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Jupyter</span><span>Jira</span><span>Microsoft Teams</span><span>Cloudflare</span><span>Vercel</span><span>Render</span></div></article>
+          <article class="card reveal"><h3>Core &amp; Leadership</h3><div class="tags"><span>DSA</span><span>OOP</span><span>Problem-Solving</span><span>Team Management</span><span>Project Management</span><span>Task Allocation</span><span>Team Coordination</span><span>Communication</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">04</span><span class="sec-sep">/</span> Projects</p>
+          <h2 class="section-title" id="projectsTitle">Product case studies.</h2>
+          <p class="section-sub">Every project has Live Demo, GitHub, and Project Report actions. Unavailable links show an elegant placeholder — easy to replace later in one config.</p>
+        </div>
+        <div class="projects-grid">
+
+          <article class="card project project--3d project--object reveal" id="project-internflow" data-project-card="internflow" data-tilt-3d data-tilt-max="4">
+            <p class="status status--done" data-depth="24"><span aria-hidden="true">✓</span> Completed</p>
+            <h3 data-depth="6">InternFlow</h3>
+            <p class="card__org" data-depth="6">AI-Powered Internship Recruitment SaaS</p>
+            <p class="proof-label">Full-Stack SaaS · Auth · RBAC · Recruitment Workflow</p>
+            <div class="project-visual visual--panels" aria-hidden="true"><span class="pv-panel pv-a"></span><span class="pv-panel pv-b"></span><span class="pv-panel pv-c"></span><i class="bx bx-git-compare"></i><span>Intake → Match → Onboard</span><span class="pv-dot"></span></div>
+            <p>Recruitment workflows for application intake, candidate management, analytics, auth, RBAC, and AI-assisted onboarding.</p>
+            <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Prisma</span><span>PostgreSQL</span></div>
+            <ul class="check-list">
+              <li>Application intake &amp; candidate management</li>
+              <li>Analytics + authentication + RBAC</li>
+              <li>AI-powered recruitment workflows</li>
+            </ul>
+            <div class="contrib" data-depth="6">
+              <h4>My Contribution</h4>
+              <p>Full product flow — data model, APIs, auth/RBAC, and recruitment UI.</p>
+            </div>
+            <details class="tech-details">
+              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+              <div class="tech-details__body">
+                <p><strong>Architecture</strong><span>Next.js full-stack app with API routes, Prisma ORM layer, and role-gated pages.</span></p>
+                <p><strong>Data flow</strong><span>Application intake → validation → PostgreSQL via Prisma → candidate pipeline → analytics → onboarding checklist.</span></p>
+                <p><strong>Backend</strong><span>REST-style API routes for applications, candidates, and analytics.</span></p>
+                <p><strong>Database</strong><span>PostgreSQL models for users, roles, applications, and onboarding state.</span></p>
+                <p><strong>AI / Validation</strong><span>AI-assisted recruitment workflows for screening support and onboarding guidance.</span></p>
+              </div>
+            </details>
+            <div class="project__actions" data-depth="6">
+              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="internflow"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="internflow"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="internflow"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
+            </div>
+          </article>
+
+          <article class="card project project--3d project--object reveal" id="project-taxshield" data-project-card="taxshield" data-tilt-3d data-tilt-max="4">
+            <p class="status status--current" data-depth="24"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Currently Building</p>
+            <h3 data-depth="6">TaxShield</h3>
+            <p class="card__org" data-depth="6">Tax-Readiness Intelligence Platform</p>
+            <p class="proof-label">Rules + AI · Document Intelligence · Financial Readiness</p>
+            <div class="project-visual visual--docs" aria-hidden="true"><span class="pv-doc pv-a"></span><span class="pv-doc pv-b"></span><span class="pv-node pv-n1"></span><span class="pv-node pv-n2"></span><i class="bx bx-shield-quarter"></i><span>Docs → Rules + AI → Score</span><span class="pv-dot"></span></div>
+            <p>Turns documents into evidence, obligations, risks, deadlines, scenarios, and a 0–100 readiness score.</p>
+            <div class="tags"><span>AI</span><span>Rule-Based Systems</span><span>Document Intelligence</span><span>Financial Data Processing</span></div>
+            <ul class="check-list">
+              <li>Evidence &amp; obligation mapping</li>
+              <li>Risk + deadline tracking</li>
+              <li>Scenario analysis &amp; readiness score</li>
+            </ul>
+            <div class="contrib" data-depth="6">
+              <h4>My Contribution</h4>
+              <p>Document pipeline, rules + AI layer, and readiness scoring UX.</p>
+            </div>
+            <details class="tech-details">
+              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+              <div class="tech-details__body">
+                <p><strong>Architecture</strong><span>Document intake → document intelligence → rules + AI engine → readiness output.</span></p>
+                <p><strong>Data flow</strong><span>Documents / user data → extraction → evidence / obligations / risks → deadlines / scenarios → 0–100 score.</span></p>
+                <p><strong>Backend</strong><span>Rule checks augmented by AI interpretation over extracted document data.</span></p>
+                <p><strong>AI / Processing</strong><span>Financial data processing with evidence, obligation, risk, and scenario mapping.</span></p>
+                <p><strong>Validation</strong><span>In progress — only the flows shown here are claimed.</span></p>
+              </div>
+            </details>
+            <div class="project__actions" data-depth="6">
+              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="taxshield"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="taxshield"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="taxshield"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
+            </div>
+          </article>
+
+          <article class="card project project--3d project--object reveal" id="project-agrosense" data-project-card="agrosense" data-tilt-3d data-tilt-max="4">
+            <p class="status status--done" data-depth="24"><span aria-hidden="true">✓</span> Completed</p>
+            <h3 data-depth="6">AgroSense AI</h3>
+            <p class="card__org" data-depth="6">Agricultural Recommendation System</p>
+            <p class="proof-label">Random Forest · Prediction · Explainability · Flask</p>
+            <div class="project-visual visual--nodes" aria-hidden="true"><span class="pv-link pv-l1"></span><span class="pv-link pv-l2"></span><span class="pv-node pv-n1"></span><span class="pv-node pv-n2"></span><span class="pv-node pv-n3"></span><i class="bx bx-leaf"></i><span>Soil + Climate → Recommendation</span><span class="pv-dot"></span></div>
+            <p>Crop, fertilizer, and disease prediction from soil/climate parameters with explainable insights.</p>
+            <div class="tags"><span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Random Forest</span></div>
+            <ul class="check-list">
+              <li>Crop / fertilizer / disease prediction</li>
+              <li>Soil &amp; climate parameter inputs</li>
+              <li>Explainable prediction insights</li>
+            </ul>
+            <div class="contrib" data-depth="6">
+              <h4>My Contribution</h4>
+              <p>ML models, Flask backend, and farmer-friendly UI.</p>
+            </div>
+            <details class="tech-details">
+              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+              <div class="tech-details__body">
+                <p><strong>Architecture</strong><span>Flask backend serving scikit-learn Random Forest models behind a simple input UI.</span></p>
+                <p><strong>Data flow</strong><span>Soil / climate parameters → preprocessing → model inference → explainable insight → recommendation.</span></p>
+                <p><strong>Backend</strong><span>Flask routes for prediction, input validation, and result rendering.</span></p>
+                <p><strong>AI / Processing</strong><span>Random Forest classifiers with feature-importance style explanations.</span></p>
+                <p><strong>Validation</strong><span>Tested against real soil/climate input cases.</span></p>
+              </div>
+            </details>
+            <div class="project__actions" data-depth="6">
+              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="agrosense"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="agrosense"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="agrosense"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
+            </div>
+          </article>
+
+          <article class="card project project--3d project--object reveal" id="project-fpp" data-project-card="fpp" data-tilt-3d data-tilt-max="4">
+            <p class="status status--current" data-depth="24"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Currently Building</p>
+            <h3 data-depth="6">FPP</h3>
+            <p class="card__org" data-depth="6">Faculty Patent Profile Verification System</p>
+            <p class="proof-label">OCR · Verification · Duplicate Detection · Review Workflow</p>
+            <div class="project-visual visual--stack" aria-hidden="true"><span class="pv-doc pv-a"></span><span class="pv-doc pv-b"></span><span class="pv-doc pv-c"></span><i class="bx bx-scan"></i><span>Upload → OCR → Verified Review</span><span class="pv-dot"></span></div>
+            <p>Document upload, OCR extraction, verification, duplicate/conflict checks, and structured review.</p>
+            <div class="tags"><span>OCR</span><span>Tesseract</span><span>OpenCV</span><span>Full-Stack</span></div>
+            <ul class="check-list">
+              <li>OCR extraction pipeline</li>
+              <li>Verification + duplicate checks</li>
+              <li>Structured review workflow</li>
+            </ul>
+            <div class="contrib" data-depth="6">
+              <h4>My Contribution</h4>
+              <p>OCR pipeline, verification logic, and review interface — built as part of a college team project.</p>
+            </div>
+            <details class="tech-details">
+              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+              <div class="tech-details__body">
+                <p><strong>Architecture</strong><span>Upload → OCR → extraction → verification → review queue.</span></p>
+                <p><strong>Data flow</strong><span>Document upload → Tesseract / OpenCV extraction → field verification → duplicate / conflict checks → structured review.</span></p>
+                <p><strong>Backend</strong><span>Document processing routes with validation and review state.</span></p>
+                <p><strong>AI / Processing</strong><span>Image preprocessing, text extraction, and rule-based verification.</span></p>
+                <p><strong>Validation</strong><span>In progress — only the flows shown here are claimed.</span></p>
+              </div>
+            </details>
+            <div class="project__actions" data-depth="6">
+              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="fpp"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="fpp"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="fpp"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIDE THE BUILD -->
+    <section class="section section--tint" id="inside" aria-labelledby="insideTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Systems Thinking</p>
+          <h2 class="section-title" id="insideTitle">INSIDE THE BUILD</h2>
+          <p class="section-sub">Simplified architecture — no fake screenshots.</p>
+        </div>
+        <div class="inside-grid">
+          <article class="card card--pipe reveal" data-tilt-3d data-tilt-max="2" aria-label="TaxShield workflow">
+            <h3>TaxShield — Readiness Flow</h3>
+            <ol class="mini-flow mini-flow--animated pipe">
+              <li data-depth="8">Documents / User Data</li>
+              <li data-depth="10">Document Intelligence</li>
+              <li data-depth="12">Rules + AI</li>
+              <li data-depth="14">Evidence / Obligations / Risks</li>
+              <li data-depth="16">Deadlines / Scenarios</li>
+              <li data-depth="18"><strong>0–100 Readiness Score</strong></li>
+            </ol>
+            <a class="btn btn--link arch-link" href="#project-taxshield">View architecture <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+          </article>
+          <article class="card card--pipe reveal" data-tilt-3d data-tilt-max="2" aria-label="FPP workflow">
+            <h3>FPP — Verification Flow</h3>
+            <ol class="mini-flow mini-flow--animated pipe">
+              <li data-depth="8">Document Upload</li>
+              <li data-depth="10">OCR</li>
+              <li data-depth="12">Extraction</li>
+              <li data-depth="14">Verification</li>
+              <li data-depth="16">Duplicate / Conflict Checks</li>
+              <li data-depth="18"><strong>Structured Review</strong></li>
+            </ol>
+            <a class="btn btn--link arch-link" href="#project-fpp">View architecture <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+          </article>
+          <article class="card reveal" aria-label="InternFlow and AgroSense workflows">
+            <h3>InternFlow / AgroSense AI</h3>
+            <ol class="mini-flow">
+              <li>Intake / Soil inputs</li>
+              <li>Processing (RBAC / Random Forest)</li>
+              <li>AI insights</li>
+              <li><strong>Onboarding / Recommendation</strong></li>
+            </ol>
+            <p class="note">Only implemented capabilities are shown. No exaggerated claims.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I BUILD / WHAT I BUILD -->
+    <section class="section" id="process" aria-labelledby="processTitle">
+      <div class="container split">
+        <div class="reveal">
+          <p class="eyebrow">Process</p>
+          <h2 class="section-title" id="processTitle">HOW I BUILD</h2>
+          <ol class="steps">
+            <li><strong>01 — Understand</strong><span>Problem, users, constraints</span></li>
+            <li><strong>02 — Design</strong><span>Simple, clean UX first</span></li>
+            <li><strong>03 — Develop</strong><span>Full-stack + AI + Web3</span></li>
+            <li><strong>04 — Integrate</strong><span>APIs, data, auth</span></li>
+            <li><strong>05 — Test</strong><span>Real cases, edge cases</span></li>
+            <li><strong>06 — Deliver</strong><span>Ship, measure, iterate</span></li>
+          </ol>
+        </div>
+        <div class="reveal" id="what">
+          <p class="eyebrow">Capabilities</p>
+          <h2 class="section-title">WHAT I BUILD</h2>
+          <div class="what-list">
+            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--orbit" aria-hidden="true"></span><h3>Intelligent Applications</h3><p>AI / ML / LLM / Agentic AI</p></article>
+            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--layers" aria-hidden="true"></span><h3>Full-Stack Products</h3><p>Frontend → Backend → Database → APIs</p></article>
+            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--nodes" aria-hidden="true"></span><h3>Web3 Applications</h3><p>Smart Contracts → DApps → Blockchain</p></article>
+            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--docs" aria-hidden="true"></span><h3>Document Intelligence</h3><p>OCR → Processing → Verification</p></article>
+            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--team" aria-hidden="true"></span><h3>Team Execution</h3><p>Planning → Allocation → Coordination → Delivery</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD PHILOSOPHY -->
+    <section class="section section--tint" id="philosophy" aria-labelledby="philosophyTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Philosophy</p>
+          <h2 class="section-title" id="philosophyTitle">HOW I APPROACH SOFTWARE</h2>
+          <p class="section-sub">Understand the problem. Design the system. Build the product. Test the reality. Improve continuously.</p>
+        </div>
+        <ol class="philo-grid">
+          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">01</span><span class="what-icon what-icon--orbit" aria-hidden="true"></span><strong>Understand</strong><span>Problem first</span></li>
+          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">02</span><span class="what-icon what-icon--layers" aria-hidden="true"></span><strong>Design</strong><span>System before code</span></li>
+          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">03</span><span class="what-icon what-icon--nodes" aria-hidden="true"></span><strong>Build</strong><span>Ship the product</span></li>
+          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">04</span><span class="what-icon what-icon--docs" aria-hidden="true"></span><strong>Test</strong><span>Reality over assumptions</span></li>
+          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">05</span><span class="what-icon what-icon--team" aria-hidden="true"></span><strong>Deliver</strong><span>Improve continuously</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section class="section section--tint" id="resume" aria-labelledby="resumeTitle">
+      <div class="container resume-band reveal">
+        <div>
+          <p class="eyebrow">Resume</p>
+          <h2 class="section-title" id="resumeTitle">WANT THE COMPLETE PROFILE?</h2>
+          <p class="section-sub">Explore my work here. Get the complete professional profile in my resume.</p>
+        </div>
+        <div class="inline-actions">
+          <a class="btn btn--primary" href="assets/resume/Mohan_Prabu_K_Resume.pdf" target="_blank" rel="noreferrer">View Resume <i class="bx bx-show" aria-hidden="true"></i></a>
+          <a class="btn btn--secondary" href="assets/resume/Mohan_Prabu_K_Resume.pdf" download>Download Resume <i class="bx bx-download" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFY -->
+    <section class="section section--tint" id="verify" aria-labelledby="verifyTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Proof</p>
+          <h2 class="section-title" id="verifyTitle">VERIFY MY WORK</h2>
+        </div>
+        <div class="verify-grid">
+          <a class="card verify-card reveal" href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer">
+            <i class="bx bxl-github" aria-hidden="true"></i><h3>GitHub</h3><p>View my code →</p>
+          </a>
+          <a class="card verify-card reveal" href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer">
+            <i class="bx bxl-linkedin" aria-hidden="true"></i><h3>LinkedIn</h3><p>View my professional profile →</p>
+          </a>
+          <a class="card verify-card reveal" href="assets/resume/Mohan_Prabu_K_Resume.pdf" target="_blank" rel="noreferrer">
+            <i class="bx bx-file" aria-hidden="true"></i><h3>Resume</h3><p>View my complete profile →</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-labelledby="contactTitle">
+      <div class="container split">
+        <div class="reveal">
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">06</span><span class="sec-sep">/</span> Contact</p>
+          <h2 class="section-title" id="contactTitle">LET'S BUILD SOMETHING</h2>
+          <p class="lead">Have an opportunity, project, or idea? Let's talk.</p>
+          <div class="contact-list">
+            <a href="mailto:mohanprabu1823@gmail.com"><i class="bx bx-envelope" aria-hidden="true"></i> mohanprabu1823@gmail.com</a>
+            <a href="tel:+919884801823"><i class="bx bx-phone" aria-hidden="true"></i> +91 9884801823</a>
+            <span><i class="bx bx-map" aria-hidden="true"></i> Salem, Tamil Nadu, India</span>
           </div>
           <div class="hero__buttons">
-            <a href="#contact" class="btn btn--primary">Hire Me <i class="bx bx-right-arrow-alt"></i></a>
-            <button class="btn btn--ghost" id="openDownloadOptions" type="button">Download CV <i class="bx bx-download"></i></button>
-            <button class="btn btn--ghost" id="openResumePreview" type="button">Preview Resume <i class="bx bx-show"></i></button>
-          </div>
-          <div class="socials" aria-label="Social links">
-            <a href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-            <a href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a class="btn btn--primary" href="mailto:mohanprabu1823@gmail.com"><i class="bx bx-envelope" aria-hidden="true"></i> Email</a>
+            <a class="btn btn--secondary" href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer"><i class="bx bxl-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            <a class="btn btn--secondary" href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</a>
+            <a class="btn btn--ghost" href="assets/resume/Mohan_Prabu_K_Resume.pdf" download><i class="bx bx-file" aria-hidden="true"></i> Resume</a>
           </div>
         </div>
-        <div class="hero__visual reveal-right">
-          <div class="profile-card" data-tilt data-tilt-max="8">
-            <img src="assets/images/mohan-professional-photo.png" alt="Mohan Prabu K professional profile photo" loading="eager">
-            <div class="profile-card__badge"><i class="bx bx-bolt-circle"></i> Available for work</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats section-sm" aria-label="Portfolio statistics">
-      <div class="container stats__grid">
-        <article class="stat-card" data-tilt><strong data-count="3">0</strong><span>Featured Projects</span></article>
-        <article class="stat-card" data-tilt><strong data-count="14">0</strong><span>Technologies</span></article>
-        <article class="stat-card" data-tilt><strong data-count="5">0</strong><span>Certifications</span></article>
-        <article class="stat-card" data-tilt><strong data-count="3">0</strong><span>Internships</span></article>
-      </div>
-    </section>
-
-    <section class="about section" id="about">
-      <div class="container split">
-        <div class="about__image reveal-left">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Code editor with modern web application code" loading="lazy">
-        </div>
-        <div class="section-copy reveal-right">
-          <span class="eyebrow">About Me</span>
-          <h2 class="section-title">Developer with product thinking and execution speed.</h2>
-          <p>
-            Aspiring Full-Stack, AI, and Web3 developer with practical experience
-            building AI-driven and web-based applications. Proficient in Python and
-            JavaScript, with formal Python training and a strong foundation in machine
-            learning, backend systems, and scalable real-world solutions.
-          </p>
-          <p>
-            My career objective is to contribute to startups and tech companies by
-            building impactful digital products using AI, Cloud, Full-Stack, and Web3
-            technologies.
-          </p>
-          <a href="#projects" class="btn btn--primary">Read More <i class="bx bx-layer"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="marquee section-sm" aria-label="Technology stack">
-      <div class="marquee__track">
-        <span><i class="bx bxl-html5"></i>HTML</span>
-        <span><i class="bx bxl-css3"></i>CSS</span>
-        <span><i class="bx bxl-javascript"></i>JavaScript</span>
-        <span><i class="bx bxl-react"></i>React</span>
-        <span><i class="bx bx-mobile-alt"></i>Flutter</span>
-        <span><i class="bx bxl-python"></i>Python</span>
-        <span><i class="bx bx-server"></i>Flask</span>
-        <span><i class="bx bxl-mongodb"></i>MongoDB</span>
-        <span><i class="bx bxl-firebase"></i>Firebase</span>
-        <span><i class="bx bx-cube-alt"></i>Solidity</span>
-        <span><i class="bx bx-data"></i>SQL</span>
-        <span><i class="bx bxl-git"></i>Git</span>
-        <span><i class="bx bxl-github"></i>GitHub</span>
-      </div>
-    </section>
-
-    <section class="skills section" id="skills">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Skill Matrix</span>
-          <h2 class="section-title">Full-stack foundations with AI and Web3 edge.</h2>
-        </div>
-        <div class="skills__grid">
-          <article class="skill-card reveal-up" data-tilt>
-            <i class="bx bx-layout"></i><h3>Frontend</h3>
-            <div class="skill"><span>HTML</span><b>95%</b><div><em data-width="95"></em></div></div>
-            <div class="skill"><span>CSS</span><b>92%</b><div><em data-width="92"></em></div></div>
-            <div class="skill"><span>JavaScript</span><b>88%</b><div><em data-width="88"></em></div></div>
-            <div class="skill"><span>React</span><b>78%</b><div><em data-width="78"></em></div></div>
-            <div class="skill"><span>Flutter</span><b>82%</b><div><em data-width="82"></em></div></div>
-          </article>
-          <article class="skill-card reveal-up" data-tilt>
-            <i class="bx bx-data"></i><h3>Backend</h3>
-            <div class="skill"><span>Python</span><b>87%</b><div><em data-width="87"></em></div></div>
-            <div class="skill"><span>Flask</span><b>82%</b><div><em data-width="82"></em></div></div>
-            <div class="skill"><span>MongoDB</span><b>78%</b><div><em data-width="78"></em></div></div>
-            <div class="skill"><span>Firebase</span><b>80%</b><div><em data-width="80"></em></div></div>
-            <div class="skill"><span>REST APIs</span><b>78%</b><div><em data-width="78"></em></div></div>
-          </article>
-          <article class="skill-card reveal-up" data-tilt>
-            <i class="bx bx-brain"></i><h3>AI/ML</h3>
-            <div class="skill"><span>AI Workflows</span><b>84%</b><div><em data-width="84"></em></div></div>
-            <div class="skill"><span>Data Processing</span><b>76%</b><div><em data-width="76"></em></div></div>
-            <div class="skill"><span>Automation</span><b>83%</b><div><em data-width="83"></em></div></div>
-            <div class="skill"><span>Jupyter Notebook</span><b>74%</b><div><em data-width="74"></em></div></div>
-          </article>
-          <article class="skill-card reveal-up" data-tilt>
-            <i class="bx bx-link-alt"></i><h3>Blockchain</h3>
-            <div class="skill"><span>Solidity</span><b>75%</b><div><em data-width="75"></em></div></div>
-            <div class="skill"><span>Smart Contracts</span><b>72%</b><div><em data-width="72"></em></div></div>
-            <div class="skill"><span>Web3 Concepts</span><b>80%</b><div><em data-width="80"></em></div></div>
-          </article>
-          <article class="skill-card reveal-up" data-tilt>
-            <i class="bx bx-wrench"></i><h3>Tools</h3>
-            <div class="skill"><span>GitHub</span><b>86%</b><div><em data-width="86"></em></div></div>
-            <div class="skill"><span>Tailwind CSS</span><b>82%</b><div><em data-width="82"></em></div></div>
-            <div class="skill"><span>VS Code</span><b>90%</b><div><em data-width="90"></em></div></div>
-            <div class="skill"><span>DSA & OOP</span><b>76%</b><div><em data-width="76"></em></div></div>
-            <div class="skill"><span>Deployment</span><b>78%</b><div><em data-width="78"></em></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="learning section">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Currently Learning</span>
-          <h2 class="section-title">Sharpening the stack for production-ready work.</h2>
-        </div>
-        <div class="cards-grid four">
-          <article class="focus-card reveal-up" data-tilt><i class="bx bxl-react"></i><h3>Advanced React</h3><p>Component architecture, state patterns, hooks, performance, and scalable UI systems.</p></article>
-          <article class="focus-card reveal-up" data-tilt><i class="bx bx-cloud-upload"></i><h3>Cloud Deployment</h3><p>Secure deployments, hosting workflows, environment setup, and uptime-focused practices.</p></article>
-          <article class="focus-card reveal-up" data-tilt><i class="bx bx-shield-quarter"></i><h3>Smart Contract Security</h3><p>Safer Solidity patterns, common attack risks, and trust-first decentralized workflows.</p></article>
-          <article class="focus-card reveal-up" data-tilt><i class="bx bx-brain"></i><h3>AI Model Integration</h3><p>Connecting ML outputs to clean product interfaces with practical backend logic.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="timeline section" id="experience">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Experience</span>
-          <h2 class="section-title">A learning path shaped around real-world building.</h2>
-        </div>
-        <div class="timeline__list">
-          <article class="timeline__item reveal-left"><span></span><h3>R P Sarathy Institute of Technology</h3><p>B.Tech in Artificial Intelligence and Data Science, 2024 - 2028. CGPA: 8.01.</p></article>
-          <article class="timeline__item reveal-right"><span></span><h3>Flutter Developer Intern - She Software Solutions</h3><p>Current role developing cross-platform mobile apps with Flutter and Dart, responsive UI/UX, API integration, debugging, performance improvements, clean architecture, and Git workflows.</p></article>
-          <article class="timeline__item reveal-left"><span></span><h3>AI Intern - ZEAI SOFT</h3><p>Remote, Chennai, Jan 2025. Worked on responsive frontend modules, UI fixes, debugging, teamwork, version control, performance, and usability improvements.</p></article>
-          <article class="timeline__item reveal-right"><span></span><h3>Blockchain Developer Intern - CODTECH IT Solutions</h3><p>Remote, Hyderabad, Jun 2025 - Jul 2025. Learned smart contract development, DApps, Web3 workflows, decentralized architecture, and blockchain fundamentals.</p></article>
-          <article class="timeline__item reveal-left"><span></span><h3>Major Projects & Certifications</h3><p>Built AI, full-stack, and blockchain projects while earning Python, NSS, Deloitte, and Hindi Praveshika certifications.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="services section">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Services</span>
-          <h2 class="section-title">What I can build for teams.</h2>
-        </div>
-        <div class="cards-grid three">
-          <article class="service-card reveal-up" data-tilt><i class="bx bx-code-alt"></i><h3>Full Stack Web Development</h3><p>Responsive web apps with clean UI, practical backend logic, databases, auth, and deployment-ready structure.</p><a href="#contact">Read More</a></article>
-          <article class="service-card reveal-up" data-tilt><i class="bx bx-chip"></i><h3>AI Application Development</h3><p>AI-powered tools, automation flows, prediction interfaces, and data-assisted features for real use cases.</p><a href="#contact">Read More</a></article>
-          <article class="service-card reveal-up" data-tilt><i class="bx bx-cube"></i><h3>Blockchain/Web3 Solutions</h3><p>Smart-contract based systems for voting, donation tracking, trust layers, and transparent records.</p><a href="#contact">Read More</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="why-hire section">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Why Hire Me?</span>
-          <h2 class="section-title">A developer profile built for fast-moving teams.</h2>
-        </div>
-        <div class="hire-grid">
-          <article class="hire-card reveal-up" data-tilt><i class="bx bx-rocket"></i><h3>Startup Mindset</h3><p>I focus on shipping useful features quickly, learning from feedback, and improving product quality with each iteration.</p></article>
-          <article class="hire-card reveal-up" data-tilt><i class="bx bx-layer"></i><h3>Full-Stack + AI + Web3</h3><p>My mix of frontend, backend, AI workflows, and blockchain fundamentals helps me build across product layers.</p></article>
-          <article class="hire-card reveal-up" data-tilt><i class="bx bx-briefcase"></i><h3>Internship Experience</h3><p>I have practical exposure to Flutter, AI, frontend, blockchain workflows, Git, and remote collaboration.</p></article>
-          <article class="hire-card reveal-up" data-tilt><i class="bx bx-bulb"></i><h3>Problem-Solving Focus</h3><p>I break unclear problems into clean interfaces, backend logic, measurable results, and usable demos.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="tools section-sm">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Tools I Use</span>
-          <h2 class="section-title">Daily workflow tools for design, code, APIs, and databases.</h2>
-        </div>
-        <div class="tools-grid">
-          <article class="tool-pill reveal-up"><i class="bx bxl-visual-studio"></i><span>VS Code</span></article>
-          <article class="tool-pill reveal-up"><i class="bx bxl-github"></i><span>GitHub</span></article>
-          <article class="tool-pill reveal-up"><i class="bx bx-paper-plane"></i><span>Postman</span></article>
-          <article class="tool-pill reveal-up"><i class="bx bxl-firebase"></i><span>Firebase</span></article>
-          <article class="tool-pill reveal-up"><i class="bx bxl-mongodb"></i><span>MongoDB</span></article>
-          <article class="tool-pill reveal-up"><i class="bx bxl-figma"></i><span>Figma</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects section" id="projects">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Featured Projects</span>
-          <h2 class="section-title">Recruiter-focused project showcase.</h2>
-        </div>
-        <div class="filter-bar reveal-up" role="tablist" aria-label="Project filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="ai">AI</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="blockchain">Blockchain</button>
-          <button class="filter-btn" data-filter="webapp">Web Apps</button>
-        </div>
-        <div class="projects__grid" id="projectGrid"></div>
-      </div>
-    </section>
-
-    <section class="certifications section" id="certifications">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="eyebrow">Certifications</span>
-          <h2 class="section-title">Continuous learning proof.</h2>
-        </div>
-        <div class="cards-grid certificates">
-          <article class="cert-card reveal-up"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80" alt="Programming in Python certificate" loading="lazy"><h3>Programming in Python</h3><p>FutoGen Computer Education - Sep 2024</p></article>
-          <article class="cert-card reveal-up"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Deloitte Australia Data Analytics Job Simulation certificate" loading="lazy"><h3>Deloitte Australia Data Analytics</h3><p>Forage - Issued Jan 2026</p></article>
-          <article class="cert-card reveal-up"><img src="assets/images/nss-logo.svg" alt="NSS logo for Certificate A" loading="lazy"><h3>NSS Certificate A</h3><p>Directorate of School Education, Tamil Nadu - Apr 2024</p></article>
-          <article class="cert-card reveal-up"><img src="assets/images/nss-logo.svg" alt="NSS logo for Special Camp certificate" loading="lazy"><h3>NSS Special Camp</h3><p>Youth for Cleanliness - Nov 2022</p></article>
-          <article class="cert-card reveal-up"><img src="assets/images/hindi-exam-logo.svg" alt="Hindi Praveshika examination logo" loading="lazy"><h3>Hindi Praveshika Examination</h3><p>Level 5 Completed - Oct 2020</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section" id="contact">
-      <div class="container split">
-        <div class="section-copy reveal-left">
-          <span class="eyebrow">Contact</span>
-          <h2 class="section-title">Let us build something useful.</h2>
-          <div class="availability"><i class="bx bx-radio-circle-marked"></i>Open for internships, freelance projects, and collaborations</div>
-          <div class="contact-list">
-            <a href="mailto:mohanprabu1823@gmail.com"><i class="bx bx-envelope"></i>mohanprabu1823@gmail.com</a>
-            <a href="tel:+919884801823"><i class="bx bx-phone"></i>+91 9884801823</a>
-            <span><i class="bx bx-map"></i>Salem, Tamil Nadu, India</span>
-          </div>
-          <div class="contact-actions">
-            <a href="https://wa.me/919884801823" target="_blank" rel="noreferrer" class="btn btn--primary"><i class="bx bxl-whatsapp"></i>WhatsApp</a>
-            <button class="btn btn--ghost" id="copyEmail"><i class="bx bx-copy"></i>Copy Email</button>
-          </div>
-        </div>
-        <form class="contact-form reveal-right" id="contactForm" novalidate>
-          <label><span>Name</span><input type="text" name="name" placeholder="Your name" required minlength="2"></label>
-          <label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required></label>
-          <label><span>Subject</span><input type="text" name="subject" placeholder="Project or opportunity" required minlength="4"></label>
-          <label><span>Message</span><textarea name="message" rows="5" placeholder="Tell me what you want to build" required minlength="12"></textarea></label>
-          <button type="submit" class="btn btn--primary">Send Message <i class="bx bx-send"></i></button>
+        <form class="card contact-form reveal" id="contactForm" novalidate aria-label="Contact form">
+          <label><span>Name</span><input type="text" name="name" placeholder="Your name" required minlength="2" autocomplete="name"></label>
+          <label><span>Email</span><input type="email" name="email" placeholder="you@example.com" required autocomplete="email"></label>
+          <label><span>Message</span><textarea name="message" rows="5" placeholder="Opportunity, project, or idea…" required minlength="12"></textarea></label>
+          <button type="submit" class="btn btn--primary">Send Message <i class="bx bx-send" aria-hidden="true"></i></button>
           <p class="form-status" id="formStatus" aria-live="polite"></p>
         </form>
       </div>
@@ -333,101 +655,37 @@
 
   <footer class="footer">
     <div class="container footer__grid">
-      <a href="#home" class="logo"><span>M</span>Mohan</a>
-      <div class="footer__links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <a href="#home" class="logo"><span class="logo__mark" aria-hidden="true">M</span><span class="logo__text">Mohan Prabu K</span></a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about">About</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </nav>
       <div class="socials">
-        <a href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-        <a href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-        <a href="mailto:mohanprabu1823@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+        <a href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+        <a href="mailto:mohanprabu1823@gmail.com" aria-label="Email"><i class="bx bx-envelope" aria-hidden="true"></i></a>
       </div>
-      <p>Designed &amp; Developed by Mohan Prabu K</p>
+      <p>Designed &amp; built by Mohan Prabu K · HTML • CSS • JavaScript · © 2026 Mohan Prabu K</p>
     </div>
   </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bx bx-chevron-up"></i></button>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i class="bx bx-chevron-up" aria-hidden="true"></i></button>
 
-  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal__backdrop" data-close-modal></div>
+  <!-- Generic placeholder / report modal -->
+  <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+    <div class="modal__backdrop" data-close-info></div>
     <article class="modal__content">
-      <button class="modal__close" data-close-modal aria-label="Close project details"><i class="bx bx-x"></i></button>
-      <img id="modalImage" src="" alt="" loading="lazy">
+      <button class="modal__close" type="button" data-close-info aria-label="Close dialog"><i class="bx bx-x" aria-hidden="true"></i></button>
       <div class="modal__body">
-        <span class="eyebrow" id="modalCategory"></span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalDescription"></p>
-        <h3>Key Features</h3>
-        <ul id="modalFeatures"></ul>
-        <h3>Challenges Solved</h3>
-        <p id="modalChallenges"></p>
-        <h3>Metrics & Achievements</h3>
-        <ul id="modalMetrics"></ul>
-        <h3>Real-World Impact</h3>
-        <p id="modalImpact"></p>
-        <div class="tag-list" id="modalTags"></div>
+        <p class="eyebrow" id="infoKicker">Project</p>
+        <h2 id="infoTitle">Coming soon</h2>
+        <div id="infoBody"></div>
         <div class="modal__actions">
-          <a href="#" id="modalGithub" class="btn btn--ghost" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i>GitHub</a>
-          <a href="#" id="modalDemo" class="btn btn--primary" target="_blank" rel="noreferrer"><i class="bx bx-link-external"></i>Live Demo</a>
+          <button class="btn btn--primary" type="button" data-close-info>Close</button>
         </div>
       </div>
     </article>
   </div>
 
-  <div class="modal" id="resumeModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
-    <div class="modal__backdrop" data-close-resume></div>
-    <article class="modal__content resume-preview">
-      <button class="modal__close" data-close-resume aria-label="Close resume preview"><i class="bx bx-x"></i></button>
-      <div class="modal__body">
-        <span class="eyebrow">Resume Preview</span>
-        <h2 id="resumeTitle">Mohan Prabu K</h2>
-        <p>Full-Stack, AI, Web3, Cloud & Blockchain Developer based in Salem, Tamil Nadu, India.</p>
-        <div class="resume-preview__grid">
-          <article><strong>Education</strong><span>B.Tech AI & DS, R P Sarathy Institute of Technology, CGPA 8.01</span></article>
-          <article><strong>Experience</strong><span>Flutter Developer Intern, AI Intern, Blockchain Developer Intern</span></article>
-          <article><strong>Core Skills</strong><span>Python, JavaScript, Flask, React, Flutter, Firebase, MongoDB, Solidity</span></article>
-          <article><strong>Projects</strong><span>Agro-Sense AI, Crypto Price Tracker, Blockchain Donation Tracking</span></article>
-        </div>
-        <div class="modal__actions">
-          <button class="btn btn--primary" type="button" data-open-download><i class="bx bx-download"></i>Download CV</button>
-          <a href="mailto:mohanprabu1823@gmail.com" class="btn btn--ghost"><i class="bx bx-envelope"></i>Email Me</a>
-        </div>
-      </div>
-    </article>
-  </div>
-
-
-  <div class="modal" id="downloadModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
-    <div class="modal__backdrop" data-close-download></div>
-    <article class="modal__content download-options">
-      <button class="modal__close" data-close-download aria-label="Close download options"><i class="bx bx-x"></i></button>
-      <div class="modal__body">
-        <span class="eyebrow">Choose Format</span>
-        <h2 id="downloadTitle">Download Mohan Prabu K Resume</h2>
-        <p>Select the format that works best for your hiring workflow.</p>
-        <div class="download-options__grid">
-          <a href="assets/resume/Mohan-Prabu-K-Resume.pdf" class="download-card" download>
-            <i class="bx bxs-file-pdf"></i>
-            <strong>Download PDF</strong>
-            <span>Best for HR sharing, previewing, and official submissions.</span>
-          </a>
-          <a href="assets/resume/Mohan-Prabu-K-Resume.docx" class="download-card" download>
-            <i class="bx bxs-file-doc"></i>
-            <strong>Download DOCX</strong>
-            <span>Best when editable document format is preferred.</span>
-          </a>
-        </div>
-      </div>
-    </article>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
-

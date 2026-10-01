@@ -1,479 +1,669 @@
 ﻿"use strict";
 
-const projects = [
+/* ============================================================
+   CENTRAL PROJECT CONFIGURATION — edit only here later
+   To add a real link: replace "" with the URL.
+   reportStatus: "coming-soon" | "available"
+============================================================ */
+const projects = {
+  internflow: {
+    title: "InternFlow",
+    liveDemo: "",
+    github: "https://github.com/MohanPrabu018-K/Internflow",
+    report: "assets/reports/InternFlow-Project-Report.pdf",
+    reportStatus: "available"
+  },
+  taxshield: {
+    title: "TaxShield",
+    liveDemo: "",
+    github: "",
+    report: "",
+    reportStatus: "coming-soon"
+  },
+  agrosense: {
+    title: "AgroSense AI",
+    liveDemo: "",
+    github: "https://github.com/MohanPrabu018-K/Agro-Sense-AI-",
+    report: "assets/reports/AgroSense-AI-Project-Report.pdf",
+    reportStatus: "available"
+  },
+  fpp: {
+    title: "Faculty Patent Profile Verification System",
+    shortTitle: "FPP",
+    liveDemo: "https://faculty-patent-portal.vercel.app",
+    github: "https://github.com/MohanPrabu018-K/Faculty-Patent-Collection-and-Verification-Portal",
+    report: "assets/reports/FPP-Project-Report.pdf",
+    reportStatus: "available"
+  }
+};
+const projectLinks = projects; // alias required by spec
+
+const projectReports = {
+  internflow: {
+    title: "InternFlow — Project Report",
+    status: "available",
+    content: `<p><strong>AI-Powered Internship Recruitment SaaS (Completed).</strong> Production-ready Next.js 15 + React 19 + TypeScript system managing the full recruitment lifecycle — 7-stage Kanban pipeline, candidate management, assessments, interviews, offer letters, email center, analytics, and 10 AI services — over PostgreSQL/Prisma with NextAuth.js RBAC.</p><ul><li>22 routes, 0 TypeScript errors, 0 ESLint errors; Vitest suite passing</li><li>15 Prisma models, seed data, DEPLOYMENT.md included</li><li>Repository: https://github.com/MohanPrabu018-K/Internflow</li></ul><div class="report-scope"><strong>Full professional report (PDF):</strong> <a href="assets/reports/InternFlow-Project-Report.pdf" target="_blank" rel="noopener noreferrer">Download / view the complete report</a></div>`
+  },
+  taxshield: {
+    title: "TaxShield — Project Report",
+    status: "coming-soon",
+    content: ""
+  },
+  agrosense: {
+    title: "AgroSense AI — Project Report",
+    status: "available",
+    content: `<p><strong>Agricultural Recommendation System (Completed).</strong> Flask web application combining a trained Random Forest crop model (2,200-row dataset, 22 crop classes), rule-based fertilizer planning, heuristic leaf-image disease screening, authentication, prediction history, PDF reports, and an admin dashboard.</p><ul><li>Dataset + training script + model artifact + metadata all in-repo (MIT)</li><li>Verified flows: auth, all three predictors, invalid-image rejection, PDF export</li><li>Repository: https://github.com/MohanPrabu018-K/Agro-Sense-AI-</li></ul><div class="report-scope"><strong>Full professional report (PDF):</strong> <a href="assets/reports/AgroSense-AI-Project-Report.pdf" target="_blank" rel="noopener noreferrer">Download / view the complete report</a></div>`
+  },
+  fpp: {
+    title: "FPP — Project Report",
+    status: "available",
+    content: `<p><strong>Faculty Patent Profile Verification System (Currently Building).</strong> Institutional portal collecting and verifying faculty patents/designs: FastAPI + PostgreSQL backend running a deterministic 11-agent document pipeline (classification, QR, OCR extraction, verification, identity, duplicate, conflict, association, quality, analytics) with a React + TypeScript frontend and human review of uncertain cases.</p><ul><li>Free-first: no Docker, no paid APIs; OCR degrades gracefully</li><li>Live demo: https://faculty-patent-portal.vercel.app</li><li>Repository: https://github.com/MohanPrabu018-K/Faculty-Patent-Collection-and-Verification-Portal</li></ul><div class="report-scope"><strong>Full professional report (PDF):</strong> <a href="assets/reports/FPP-Project-Report.pdf" target="_blank" rel="noopener noreferrer">Download / view the complete report</a></div>`
+  }
+};
+
+const REPORT_OUTLINE = [
+  "Problem Statement", "Objectives", "Architecture", "Technology Stack",
+  "System Workflow", "Key Features", "Implementation", "Challenges", "Results", "Future Scope"
+];
+
+/* Journey chapters — single source for book */
+const JOURNEY = [
   {
-    title: "Agro-Sense AI",
-    category: ["ai", "fullstack"],
-    label: "AI + Full Stack",
-    image: "assets/images/agro-sense-screenshot.svg",
-    description: "AI-based smart agriculture assistant for crop recommendation, fertilizer planning, disease detection, soil health scoring, authentication, and reporting.",
-    features: ["Crop recommendation", "Disease detection using image inputs", "Fertilizer planning", "Soil health scoring", "Authentication and reporting"],
-    challenges: "Combined soil, weather, and image inputs into a single Flask-based platform while keeping the experience understandable for real users.",
-    metrics: ["92% crop match demo score", "4 core agriculture modules", "Mobile-first farmer workflow"],
-    impact: "Helps farmers make faster crop and soil decisions from one practical dashboard.",
-    tech: ["Python", "Flask", "Machine Learning", "JavaScript"],
-    github: "https://github.com/MohanPrabu018-K",
-    demo: "https://github.com/MohanPrabu018-K"
+    title: "The Beginning",
+    role: "B.Tech Artificial Intelligence & Data Science • 2024–2028",
+    body: "RP Sarathy Institute of Technology. Building foundations in programming, data, and systems thinking.",
+    list: [],
+    meta: "CGPA: 8.01 / 10"
   },
   {
-    title: "Crypto Price Tracker",
-    category: ["webapp", "fullstack"],
-    label: "Web App",
-    image: "assets/images/crypto-tracker-screenshot.svg",
-    description: "Real-time web application to track top cryptocurrencies using CoinGecko API integration and live price updates.",
-    features: ["CoinGecko API integration", "Live price updates", "Search functionality", "Dynamic UI updates", "Backend optimization"],
-    challenges: "Balanced frequent API-driven updates with a smooth interface that remains searchable, responsive, and easy to scan.",
-    metrics: ["Live API-powered prices", "Search-driven UX", "Optimized backend response flow"],
-    impact: "Turns market data into a clean dashboard recruiters can understand quickly.",
-    tech: ["Flask", "JavaScript", "API Integration"],
-    github: "https://github.com/MohanPrabu018-K",
-    demo: "https://github.com/MohanPrabu018-K"
+    title: "Exploring Blockchain",
+    role: "Blockchain Developer Intern • CODTECH IT Solutions",
+    body: "Remote internship focused on smart contracts, DApps, and Web3 workflows.",
+    list: ["Smart contract basics", "DApp development", "Decentralized architecture"],
+    meta: "June 2025 – July 2025"
   },
   {
-    title: "Blockchain Donation Tracking",
-    category: ["blockchain", "fullstack"],
-    label: "Blockchain",
-    image: "assets/images/donation-tracking-screenshot.svg",
-    description: "Transparent blockchain-based donation monitoring system for tracking donation flow and improving accountability.",
-    features: ["Donation ledger", "Transparent transaction flow", "Admin verification states", "Trust-first user interface"],
-    challenges: "Balanced blockchain transparency with a simple donor journey that non-technical users can understand quickly.",
-    metrics: ["Transparent ledger flow", "Verifiable donation status", "Trust-focused UI architecture"],
-    impact: "Improves donor confidence by showing where funds move and how impact is recorded.",
-    tech: ["Solidity", "Blockchain", "Web3", "JavaScript"],
-    github: "https://github.com/MohanPrabu018-K",
-    demo: "https://github.com/MohanPrabu018-K"
+    title: "Building for Industry",
+    role: "Flutter Developer Intern • SHE Software Solutions",
+    body: "Built the Employee Barcode Management System with Flutter + Firebase — now used by the company for employee and intern ID management.",
+    list: ["Flutter + Firebase", "Production usage"],
+    meta: "March 2026 – May 2026"
+  },
+  {
+    title: "Taking Leadership",
+    role: "Team Lead Intern • SHE Software Solutions",
+    body: "Leading Full-Stack and Data Analytics teams across 3 company projects.",
+    list: ["Task allocation", "Project planning", "Progress tracking", "Team coordination", "Execution"],
+    meta: "June 2026 – Present"
+  },
+  {
+    title: "Building Products",
+    role: "InternFlow • AgroSense AI",
+    body: "Shipped product-style builds: AI recruitment SaaS and an agricultural recommendation system with explainable insights.",
+    list: ["InternFlow — completed", "AgroSense AI — completed"],
+    meta: "Product execution"
+  },
+  {
+    title: "Current Chapter",
+    role: "TaxShield • FPP",
+    body: "Currently building a tax-readiness intelligence platform and a patent-profile verification system.",
+    list: ["TaxShield — currently working", "FPP — currently working"],
+    meta: "In progress",
+    here: true
+  },
+  {
+    title: "What's Next",
+    role: "Full-Stack • AI • Web3 • Product Engineering",
+    body: "Deepening product engineering, AI systems, and Web3 — with continuous learning and team leadership.",
+    list: ["Full-Stack", "AI", "Web3", "Continuous learning"],
+    meta: "Next"
   }
 ];
 
-const emailAddress = "mohanprabu1823@gmail.com";
+const $ = (s, p = document) => p.querySelector(s);
+const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const techIcons = {
-  "Python": "bxl-python",
-  "Flask": "bx-server",
-  "Machine Learning": "bx-brain",
-  "JavaScript": "bxl-javascript",
-  "API Integration": "bx-plug",
-  "Solidity": "bx-cube-alt",
-  "Blockchain": "bx-link-alt",
-  "Web3": "bx-network-chart"
-};
-
-const $ = (selector, parent = document) => parent.querySelector(selector);
-const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
-
-function initLoader() {
-  const loader = $("#loader");
-  const bar = $("#loaderBar");
-  const percent = $("#loaderPercent");
-  let value = 0;
-  const timer = setInterval(() => {
-    value += Math.floor(Math.random() * 8) + 4;
-    if (value >= 100) value = 100;
-    bar.style.width = `${value}%`;
-    percent.textContent = `${value}%`;
-    if (value === 100) {
-      clearInterval(timer);
-      setTimeout(() => loader.classList.add("hide"), 450);
-    }
-  }, 80);
+/* ---------- Welcome (1–2s max, skippable) ---------- */
+function initWelcome() {
+  const welcome = $("#welcome");
+  const bar = $("#welcomeBar");
+  const enter = $("#welcomeEnter");
+  if (!welcome) return;
+  document.body.style.overflow = "hidden";
+  let done = false;
+  const finish = () => {
+    if (done) return;
+    done = true;
+    welcome.classList.add("hide");
+    document.body.style.overflow = "";
+    welcome.setAttribute("aria-hidden", "true");
+  };
+  enter.addEventListener("click", finish);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.key === "Enter") finish();
+  });
+  // progress bar ~1.4s
+  const start = performance.now();
+  const dur = prefersReducedMotion() ? 100 : 1400;
+  const tick = (now) => {
+    const p = Math.min((now - start) / dur, 1);
+    if (bar) bar.style.width = `${p * 100}%`;
+    if (p < 1 && !done) requestAnimationFrame(tick);
+    else finish();
+  };
+  requestAnimationFrame(tick);
+  // hard cap 2s
+  setTimeout(finish, 2000);
 }
 
-function initTheme() {
-  const savedTheme = localStorage.getItem("mango-theme");
-  const toggle = $("#themeToggle");
-  const icon = $("i", toggle);
-  if (savedTheme === "light") document.body.classList.add("light");
-  icon.className = document.body.classList.contains("light") ? "bx bx-sun" : "bx bx-moon";
+/* ---------- Subtle ambient particles (very low opacity) ---------- */
+function initAmbient() {
+  const canvas = $("#ambientCanvas");
+  if (!canvas || prefersReducedMotion()) return;
+  const ctx = canvas.getContext("2d");
+  let w, h, pts = [];
+  const resize = () => {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+    const n = Math.min(36, Math.floor((w * h) / 45000));
+    pts = Array.from({ length: n }, () => ({
+      x: Math.random() * w, y: Math.random() * h,
+      r: 1 + Math.random() * 1.6,
+      vx: (Math.random() - 0.5) * 0.18,
+      vy: (Math.random() - 0.5) * 0.18
+    }));
+  };
+  resize();
+  window.addEventListener("resize", resize, { passive: true });
+  let visible = true;
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(canvas);
+  const reduced = () => document.hidden || !visible;
+  (function loop() {
+    requestAnimationFrame(loop);
+    if (reduced()) return;
+    ctx.clearRect(0, 0, w, h);
+    pts.forEach((p) => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(29,78,216,0.10)";
+      ctx.fill();
+    });
+    ctx.strokeStyle = "rgba(29,78,216,0.06)";
+    ctx.lineWidth = 1;
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+        if (dx * dx + dy * dy < 130 * 130) {
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  })();
+}
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    const isLight = document.body.classList.contains("light");
-    icon.className = isLight ? "bx bx-sun" : "bx bx-moon";
-    localStorage.setItem("mango-theme", isLight ? "light" : "dark");
+/* ---------- Theme (light default, persisted, accessible) ---------- */
+function initTheme() {
+  const btn = $("#themeToggle");
+  if (!btn) return;
+  const icon = $("i", btn);
+  const apply = (theme) => {
+    document.documentElement.dataset.theme = theme;
+    const dark = theme === "dark";
+    btn.setAttribute("aria-pressed", String(dark));
+    btn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+    btn.title = dark ? "Switch to light theme" : "Switch to dark theme";
+    if (icon) icon.className = dark ? "bx bx-sun" : "bx bx-moon";
+  };
+  let saved = null;
+  try { saved = localStorage.getItem("mohanprabu-theme"); } catch { saved = null; }
+  apply(saved === "dark" ? "dark" : "light");
+  btn.addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem("mohanprabu-theme", next); } catch { /* private mode */ }
+    apply(next);
   });
 }
 
+/* ---------- Nav + scroll ---------- */
 function initNav() {
   const header = $("#header");
-  const navMenu = $("#navMenu");
-  const navToggle = $("#navToggle");
-  const sections = $$("main section[id]");
+  const menu = $("#navMenu");
+  const toggle = $("#navToggle");
   const links = $$(".nav__link");
-
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-    $("i", navToggle).className = navMenu.classList.contains("open") ? "bx bx-x" : "bx bx-menu-alt-right";
+  toggle.addEventListener("click", () => {
+    const open = menu.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.querySelector("i").className = open ? "bx bx-x" : "bx bx-menu";
   });
-
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
-      $("i", navToggle).className = "bx bx-menu-alt-right";
-    });
-  });
-
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 40);
+  links.forEach((a) => a.addEventListener("click", () => {
+    menu.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.querySelector("i").className = "bx bx-menu";
+  }));
+  const sections = ["home", "about", "journey", "experience", "skills", "projects", "contact"]
+    .map((id) => document.getElementById(id)).filter(Boolean);
+  const onScroll = () => {
+    header.classList.toggle("scrolled", window.scrollY > 24);
     let current = "home";
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 140) current = section.id;
-    });
-    links.forEach(link => {
-      link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
-    });
-  });
+    sections.forEach((s) => { if (window.scrollY >= s.offsetTop - 160) current = s.id; });
+    links.forEach((l) => l.classList.toggle("is-active", l.getAttribute("href") === `#${current}`));
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    $("#scrollProgress").style.width = total > 0 ? `${(window.scrollY / total) * 100}%` : "0%";
+    $("#backToTop").classList.toggle("show", window.scrollY > 700);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  $("#backToTop").addEventListener("click", () =>
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" }));
 }
 
-function initTyping() {
-  if (window.Typed) {
-    new Typed(".typed-text", {
-      strings: ["Full Stack Developer", "AI Developer", "Web3 Developer", "Cloud & Blockchain Developer"],
-      typeSpeed: 58,
-      backSpeed: 34,
-      backDelay: 1300,
-      loop: true
-    });
-  } else {
-    $(".typed-text").textContent = "Full Stack Developer";
-  }
-}
-
-function initParticles() {
-  if (!window.particlesJS) return;
-  particlesJS("particles-js", {
-    particles: {
-      number: { value: 70, density: { enable: true, value_area: 900 } },
-      color: { value: ["#22d3ee", "#3b82f6", "#a855f7"] },
-      shape: { type: "circle" },
-      opacity: { value: 0.35, random: true },
-      size: { value: 3, random: true },
-      line_linked: { enable: true, distance: 145, color: "#38bdf8", opacity: 0.14, width: 1 },
-      move: { enable: true, speed: 1.2, direction: "none", random: true, out_mode: "out" }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-      modes: { grab: { distance: 150, line_linked: { opacity: 0.25 } }, push: { particles_nb: 3 } }
-    },
-    retina_detect: true
-  });
-}
-
+/* ---------- Reveal on scroll (IntersectionObserver) ---------- */
 function initReveal() {
-  if (!window.ScrollReveal) return;
-  const base = { distance: "34px", duration: 850, easing: "cubic-bezier(.2,.8,.2,1)", interval: 90, reset: false };
-  ScrollReveal().reveal(".reveal-up", { ...base, origin: "bottom" });
-  ScrollReveal().reveal(".reveal-left", { ...base, origin: "left" });
-  ScrollReveal().reveal(".reveal-right", { ...base, origin: "right" });
-}
-
-function initTilt() {
-  if (window.VanillaTilt) {
-    VanillaTilt.init($$("[data-tilt]"), {
-      max: 10,
-      speed: 550,
-      glare: true,
-      "max-glare": 0.18
-    });
+  const els = $$(".reveal");
+  if (prefersReducedMotion() || !("IntersectionObserver" in window)) {
+    els.forEach((e) => e.classList.add("visible"));
+    return;
   }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach((e) => io.observe(e));
 }
 
-function initCountersAndSkills() {
-  const counters = $$("[data-count]");
-  const bars = $$(".skill em");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const target = entry.target;
-      if (target.matches("[data-count]")) animateCounter(target);
-      if (target.matches(".skill-card")) {
-        $$("em", target).forEach(bar => {
-          bar.style.width = `${bar.dataset.width}%`;
-        });
+/* ---------- Photo subtle parallax ---------- */
+function initPhotoParallax() {
+  const frame = $("#photoFrame");
+  if (!frame || prefersReducedMotion()) return;
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const r = frame.getBoundingClientRect();
+      const center = window.innerHeight / 2;
+      const offset = (r.top + r.height / 2 - center) / window.innerHeight;
+      frame.style.transform = `translateY(${(offset * -14).toFixed(1)}px) translateZ(15px)`;
+      ticking = false;
+    });
+  }, { passive: true });
+}
+
+/* ---------- Hero portrait differential parallax ----------
+   Layers carry data-px factors (grid 1x → detail 4x). Uses the individual
+   `translate` property so CSS translateZ depth is never overridden.
+   Stage rotation stays with the generic tilt system; text never moves. */
+function initPortraitParallax() {
+  const scene = $("#photoTilt");
+  const hero = $("#home");
+  if (!scene || !hero) return;
+  if (prefersReducedMotion()) return;
+  if (window.matchMedia("(pointer: coarse)").matches) return;
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+  const layers = $$("[data-px]", scene);
+  if (!layers.length) return;
+  hero.addEventListener("pointermove", (e) => {
+    if (e.pointerType && e.pointerType !== "mouse") return;
+    const r = scene.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) return;
+    const px = (e.clientX - (r.left + r.width / 2)) / r.width;
+    const py = (e.clientY - (r.top + r.height / 2)) / r.height;
+    layers.forEach((l) => {
+      const f = parseFloat(l.dataset.px || "1");
+      l.style.translate = `${(px * f * 4).toFixed(1)}px ${(py * f * 3).toFixed(1)}px`;
+    });
+  });
+  hero.addEventListener("pointerleave", () => {
+    layers.forEach((l) => { l.style.translate = ""; });
+  });
+}
+
+/* ---------- Journey book ---------- */
+function initBook() {
+  const page = $("#bookPage");
+  if (!page) return;
+  let index = 0;
+  const kicker = $("#bookKicker"), title = $("#bookTitle"),
+    role = $("#bookRole"), body = $("#bookBody"),
+    list = $("#bookList"), meta = $("#bookMeta"),
+    dots = $("#bookDots"), progress = $("#bookProgress");
+
+  dots.innerHTML = JOURNEY.map((_, i) =>
+    `<button type="button" role="tab" aria-label="Go to chapter ${i + 1}" aria-selected="${i === 0}"></button>`).join("");
+  const dotBtns = $$("button", dots);
+
+  function render(dir = 1) {
+    const c = JOURNEY[index];
+    const hereEl = $("#bookHere");
+    const bookEl = $("#book");
+    kicker.textContent = `Chapter ${String(index + 1).padStart(2, "0")} / ${String(JOURNEY.length).padStart(2, "0")}`;
+    title.textContent = c.title;
+    role.textContent = c.role;
+    body.textContent = c.body;
+    list.innerHTML = c.list.map((li) => `<li>${li}</li>`).join("");
+    meta.textContent = c.meta;
+    if (hereEl) hereEl.hidden = !c.here;
+    if (bookEl) bookEl.classList.toggle("book--current", !!c.here);
+    dotBtns.forEach((d, i) => d.setAttribute("aria-selected", String(i === index)));
+    progress.style.width = `${((index + 1) / JOURNEY.length) * 100}%`;
+    const counter = $("#bookCounter");
+    if (counter) counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(JOURNEY.length).padStart(2, "0")}`;
+    if (!prefersReducedMotion()) {
+      page.classList.remove("turning");
+      void page.offsetWidth;
+      page.classList.add("turning");
+    }
+  }
+  const next = () => { index = (index + 1) % JOURNEY.length; render(1); };
+  const prev = () => { index = (index - 1 + JOURNEY.length) % JOURNEY.length; render(-1); };
+
+  $("#bookNext").addEventListener("click", next);
+  $("#bookPrev").addEventListener("click", prev);
+  const nextM = $("#bookNextM"), prevM = $("#bookPrevM");
+  if (nextM) nextM.addEventListener("click", next);
+  if (prevM) prevM.addEventListener("click", prev);
+  dotBtns.forEach((d, i) => d.addEventListener("click", () => { index = i; render(1); }));
+  document.addEventListener("keydown", (e) => {
+    const r = page.getBoundingClientRect();
+    const inView = r.top < window.innerHeight && r.bottom > 0;
+    if (!inView) return;
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  });
+  // swipe
+  let sx = null;
+  page.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+  page.addEventListener("touchend", (e) => {
+    if (sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+    sx = null;
+  }, { passive: true });
+  // click sides to turn (desktop)
+  page.addEventListener("click", (e) => {
+    const r = page.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    if (x > 0.65) next();
+    else if (x < 0.35) prev();
+  });
+  render(1);
+}
+
+/* ---------- Professional minimal 3D tilt: interpolated, capped, pointer-only ---------- */
+function initTilt3D() {
+  const els = $$("[data-tilt-3d]");
+  if (!els.length) return;
+  // Disable on touch, coarse pointers, or reduced motion
+  if (prefersReducedMotion()) return;
+  if (window.matchMedia("(pointer: coarse)").matches) return;
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+
+  els.forEach((el) => {
+    const maxY = Math.min(parseFloat(el.dataset.tiltMax || "4"), 5); // rotateY cap (hero 5)
+    const maxX = Math.min(parseFloat(el.dataset.tiltX || el.dataset.tiltMax || "4"), 4); // rotateX cap 4
+    const shadow = el.querySelector("#photoShadow, .photo-shadow");
+    let visible = true;
+    let tx = 0, ty = 0, cx = 0, cy = 0, running = false;
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible && (tx !== 0 || ty !== 0)) start();
+    }, { threshold: 0.1 });
+    io.observe(el);
+
+    function frame() {
+      // smooth interpolation — no snapping
+      cx += (tx - cx) * 0.12;
+      cy += (ty - cy) * 0.12;
+      if (Math.abs(tx - cx) < 0.01 && Math.abs(ty - cy) < 0.01) {
+        cx = tx; cy = ty;
       }
-      observer.unobserve(target);
+      el.style.transform = (cx === 0 && cy === 0)
+        ? ""
+        : `translate3d(0,0,0) rotateX(${cy.toFixed(2)}deg) rotateY(${cx.toFixed(2)}deg)`;
+      if (shadow) {
+        // dynamic shadow moves opposite the pointer
+        shadow.style.transform = `translateX(${(-cx * 3).toFixed(1)}px)`;
+        shadow.style.opacity = cx === 0 && cy === 0 ? "" : "0.85";
+      }
+      if ((cx !== tx || cy !== ty) && visible) {
+        requestAnimationFrame(frame);
+      } else {
+        running = false;
+      }
+    }
+    function start() {
+      if (running || !visible) return;
+      running = true;
+      requestAnimationFrame(frame);
+    }
+
+    el.addEventListener("pointermove", (e) => {
+      if (!visible) return;
+      if (e.pointerType && e.pointerType !== "mouse") return;
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      tx = Math.max(-maxY, Math.min(maxY, px * maxY));
+      ty = Math.max(-maxX, Math.min(maxX, -py * maxX));
+      start();
     });
-  }, { threshold: 0.35 });
-
-  counters.forEach(counter => observer.observe(counter));
-  $$(".skill-card").forEach(card => observer.observe(card));
-  bars.forEach(bar => bar.style.width = "0%");
-}
-
-function animateCounter(element) {
-  const target = Number(element.dataset.count);
-  const duration = 1300;
-  const start = performance.now();
-  const step = now => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    element.textContent = Math.floor(eased * target);
-    if (progress < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-
-function renderProjects(filter = "all") {
-  const grid = $("#projectGrid");
-  const filtered = filter === "all" ? projects : projects.filter(project => project.category.includes(filter));
-  grid.innerHTML = filtered.map(project => `
-    <article class="project-card reveal-up" data-project="${project.title}">
-      <div class="project-card__image">
-        <img src="${project.image}" alt="${project.title} screenshot" loading="lazy">
-        <div class="project-card__overlay">
-          <button class="btn btn--primary" data-open-project="${project.title}">View Details</button>
-        </div>
-      </div>
-      <div class="project-card__body">
-        <span class="eyebrow">${project.label}</span>
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <div class="metric-list">${project.metrics.map(metric => `<span><i class="bx bx-trending-up"></i>${metric}</span>`).join("")}</div>
-        <p class="project-impact"><i class="bx bx-target-lock"></i>${project.impact}</p>
-        <div class="tag-list">${project.tech.map(tag => techBadge(tag)).join("")}</div>
-        <div class="project-card__actions">
-          <a class="btn btn--ghost" href="${project.github}" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i>GitHub</a>
-          <a class="btn btn--primary" href="${project.demo}" target="_blank" rel="noreferrer"><i class="bx bx-link-external"></i>Live Demo</a>
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
-
-function initProjectFilters() {
-  renderProjects();
-  $$(".filter-btn").forEach(button => {
-    button.addEventListener("click", () => {
-      $$(".filter-btn").forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
-      renderProjects(button.dataset.filter);
+    el.addEventListener("pointerleave", () => {
+      tx = 0; ty = 0;
+      start();
     });
   });
 }
 
-function initModal() {
-  const modal = $("#projectModal");
-  document.addEventListener("click", event => {
-    const trigger = event.target.closest("[data-open-project], .project-card");
-    const close = event.target.closest("[data-close-modal]");
-    if (close) closeModal();
-    if (!trigger || event.target.closest("a")) return;
-    const title = trigger.dataset.openProject || trigger.dataset.project;
-    const project = projects.find(item => item.title === title);
-    if (project) openModal(project);
-  });
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closeModal();
-  });
+/* ---------- Currently Building: independent per-card 3D scenes ----------
+   Each card owns its perspective (CSS), layers (CSS) and ALL pointer state
+   (this closure). No shared container listeners, no global transform state:
+   hovering TaxShield can never move FPP and vice versa. */
+function initBuildingTilt() {
+  const cards = $$("[data-btilt]");
+  if (!cards.length) return;
+  if (prefersReducedMotion()) return;
+  if (window.matchMedia("(pointer: coarse)").matches) return;
+  if (!window.matchMedia("(pointer: fine)").matches) return;
 
-  function openModal(project) {
-    $("#modalImage").src = project.image;
-    $("#modalImage").alt = `${project.title} screenshot`;
-    $("#modalCategory").textContent = project.label;
-    $("#modalTitle").textContent = project.title;
-    $("#modalDescription").textContent = project.description;
-    $("#modalFeatures").innerHTML = project.features.map(feature => `<li>${feature}</li>`).join("");
-    $("#modalChallenges").textContent = project.challenges;
-    $("#modalTags").innerHTML = project.tech.map(tag => techBadge(tag)).join("");
-    $("#modalMetrics").innerHTML = project.metrics.map(metric => `<li>${metric}</li>`).join("");
-    $("#modalImpact").textContent = project.impact;
-    $("#modalGithub").href = project.github;
-    $("#modalDemo").href = project.demo;
+  const MAX_Y = 4; // rotateY cap
+  const MAX_X = 3; // rotateX cap
+
+  cards.forEach((card) => {
+    // per-card state — never shared, never global
+    let pointerX = 0, pointerY = 0;
+    let targetRX = 0, targetRY = 0;
+    let currentRX = 0, currentRY = 0;
+    let hovering = false, visible = true, running = false;
+
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible && (targetRX !== 0 || targetRY !== 0)) start();
+    }, { threshold: 0.1 });
+    io.observe(card);
+
+    function frame() {
+      currentRX += (targetRX - currentRX) * 0.14;
+      currentRY += (targetRY - currentRY) * 0.14;
+      if (Math.abs(targetRX - currentRX) < 0.01) currentRX = targetRX;
+      if (Math.abs(targetRY - currentRY) < 0.01) currentRY = targetRY;
+      card.style.transform = (currentRX === 0 && currentRY === 0 && !hovering)
+        ? ""
+        : `translate3d(0,0,0) rotateX(${currentRX.toFixed(2)}deg) rotateY(${currentRY.toFixed(2)}deg)`;
+      card.classList.toggle("tilting", hovering);
+      if (((currentRX !== targetRX || currentRY !== targetRY) || hovering) && visible) {
+        requestAnimationFrame(frame);
+      } else {
+        running = false;
+        if (!hovering) { card.style.transform = ""; card.classList.remove("tilting"); }
+      }
+    }
+    function start() {
+      if (running || !visible) return;
+      running = true;
+      requestAnimationFrame(frame);
+    }
+
+    card.addEventListener("pointermove", (e) => {
+      if (!visible) return;
+      if (e.pointerType && e.pointerType !== "mouse") return;
+      const r = card.getBoundingClientRect();
+      pointerX = (e.clientX - r.left) / r.width - 0.5;
+      pointerY = (e.clientY - r.top) / r.height - 0.5;
+      targetRY = Math.max(-MAX_Y, Math.min(MAX_Y, pointerX * MAX_Y));
+      targetRX = Math.max(-MAX_X, Math.min(MAX_X, -pointerY * MAX_X));
+      hovering = true;
+      start();
+    });
+    card.addEventListener("pointerenter", (e) => {
+      if (e.pointerType && e.pointerType !== "mouse") return;
+      hovering = true;
+      start();
+    });
+    card.addEventListener("pointerleave", () => {
+      // only this card returns to neutral — the other card is untouched
+      hovering = false;
+      targetRX = 0; targetRY = 0;
+      pointerX = 0; pointerY = 0;
+      start();
+    });
+  });
+}
+
+/* ---------- Placeholder / report modal ---------- */
+function initProjectModals() {
+  const modal = $("#infoModal");
+  const kicker = $("#infoKicker"), title = $("#infoTitle"), body = $("#infoBody");
+  let lastFocus = null;
+
+  function open(k, t, html) {
+    lastFocus = document.activeElement;
+    kicker.textContent = k;
+    title.textContent = t;
+    body.innerHTML = html;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    const closeBtn = $(".modal__close", modal);
+    if (closeBtn) closeBtn.focus();
   }
-
-  function closeModal() {
+  function close() {
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
-}
-
-function techBadge(tag) {
-  return `<span><i class="bx ${techIcons[tag] || "bx-code-alt"}"></i>${tag}</span>`;
-}
-
-function initResumePreview() {
-  const modal = $("#resumeModal");
-  const openButton = $("#openResumePreview");
-  if (!modal || !openButton) return;
-
-  openButton.addEventListener("click", () => {
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("[data-close-info]")) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) close();
   });
 
-  document.addEventListener("click", event => {
-    if (!event.target.closest("[data-close-resume]")) return;
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-action][data-project]");
+    if (!btn) return;
+    const key = btn.dataset.project;
+    const action = btn.dataset.action;
+    const cfg = projects[key];
+    if (!cfg) return;
+    const name = cfg.shortTitle || cfg.title;
+
+    if (action === "live") {
+      if (cfg.liveDemo) { window.open(cfg.liveDemo, "_blank", "noopener,noreferrer"); return; }
+      open(name, "Live Demo Coming Soon",
+        `<p>The live demo link will be added here soon. This project demo is currently being prepared.</p>
+         <div class="report-scope"><strong>Demo link will be added soon.</strong></div>`);
+    }
+    if (action === "github") {
+      if (cfg.github) { window.open(cfg.github, "_blank", "noopener,noreferrer"); return; }
+      open(name, "GitHub Repository Coming Soon",
+        `<p>The repository link will be added here once it is ready.</p>
+         <div class="report-scope"><strong>Repository will be added soon.</strong></div>`);
+    }
+    if (action === "report") {
+      const rep = projectReports[key];
+      if (rep && (rep.status === "available" || rep.content)) {
+        open(name, rep.title, `<div>${rep.content}</div>`);
+        return;
+      }
+      if (cfg.report) { window.open(cfg.report, "_blank", "noopener,noreferrer"); return; }
+      open(name, `${name} — Project Report`,
+        `<p><strong>Project Report Coming Soon.</strong> The detailed project report is currently being prepared.</p>
+         <p>It will include:</p>
+         <ul>${REPORT_OUTLINE.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
+         <div class="report-scope"><strong>Detailed report will be available soon.</strong> Report will be added here soon.</div>`);
+    }
   });
 
-  document.addEventListener("keydown", event => {
-    if (event.key !== "Escape" || !modal.classList.contains("open")) return;
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  });
-}
-
-
-function initDownloadOptions() {
-  const modal = $("#downloadModal");
-  const openButtons = $$("[data-open-download], #openDownloadOptions");
-  if (!modal || openButtons.length === 0) return;
-
-  const closeModal = () => {
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+  // deep-link from Currently Building cards + architecture links
+  const highlight = (el) => {
+    el.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "center" });
+    el.style.boxShadow = "0 0 0 3px rgba(29,78,216,.35)";
+    setTimeout(() => { el.style.boxShadow = ""; }, 1600);
   };
-
-  openButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  document.addEventListener("click", event => {
-    if (event.target.closest("[data-close-download]")) closeModal();
-    if (event.target.closest(".download-card")) closeModal();
-  });
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
-  });
+  $$("[data-goto-project]").forEach((a) => a.addEventListener("click", () => {
+    const id = `project-${a.dataset.gotoProject}`;
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) highlight(el);
+    }, 50);
+  }));
+  // architecture deep links (Inside the Build → project cards)
+  $$('a.arch-link[href^="#"], a[href^="#project-"]').forEach((a) => a.addEventListener("click", () => {
+    const id = a.getAttribute("href").slice(1);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) highlight(el);
+    }, 450);
+  }));
 }
+
+/* ---------- Contact form (mailto, no fake backend) ---------- */
 function initContact() {
   const form = $("#contactForm");
+  if (!form) return;
   const status = $("#formStatus");
-  const copyButton = $("#copyEmail");
-
-  copyButton.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(emailAddress);
-      copyButton.innerHTML = '<i class="bx bx-check"></i>Copied';
-      setTimeout(() => copyButton.innerHTML = '<i class="bx bx-copy"></i>Copy Email', 1500);
-    } catch {
-      copyButton.textContent = emailAddress;
-    }
-  });
-
-  form.addEventListener("submit", event => {
-    event.preventDefault();
-    let valid = true;
-    $$("input, textarea", form).forEach(field => {
-      field.classList.toggle("invalid", !field.checkValidity());
-      if (!field.checkValidity()) valid = false;
-    });
-    status.style.color = valid ? "var(--green)" : "var(--rose)";
-    if (!valid) {
-      status.textContent = "Please complete all fields with valid details.";
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+    if (name.length < 2 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || message.length < 12) {
+      status.style.color = "#dc2626";
+      status.textContent = "Please add your name, a valid email, and a message (12+ characters).";
       return;
     }
-
-    const formData = new FormData(form);
-    const name = formData.get("name").trim();
-    const email = formData.get("email").trim();
-    const subject = formData.get("subject").trim();
-    const message = formData.get("message").trim();
-    const body = encodeURIComponent(`Hi Mohan,
-
-${message}
-
-From:
-${name}
-${email}`);
-
-    window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    status.textContent = "Opening your email app...";
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`Hi Mohan,\n\n${message}\n\nFrom: ${name}\n${email}`);
+    window.location.href = `mailto:mohanprabu1823@gmail.com?subject=${subject}&body=${body}`;
+    status.style.color = "#15803d";
+    status.textContent = "Opening your email app…";
     form.reset();
   });
-
-  form.addEventListener("input", event => {
-    if (event.target.matches("input, textarea")) {
-      event.target.classList.toggle("invalid", !event.target.checkValidity());
-    }
-  });
-}
-
-function initScrollTools() {
-  const progress = $("#scrollProgress");
-  const backToTop = $("#backToTop");
-  window.addEventListener("scroll", () => {
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = `${(window.scrollY / total) * 100}%`;
-    backToTop.classList.toggle("show", window.scrollY > 700);
-  });
-  backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-}
-
-function initCursor() {
-  const dot = $(".cursor-dot");
-  const ring = $(".cursor-ring");
-  if (!dot || !ring || window.matchMedia("(pointer: coarse)").matches) return;
-  const trails = Array.from({ length: 10 }, () => {
-    const trail = document.createElement("span");
-    trail.className = "mouse-trail";
-    document.body.appendChild(trail);
-    return trail;
-  });
-  let ringX = 0;
-  let ringY = 0;
-  let trailIndex = 0;
-  window.addEventListener("mousemove", event => {
-    dot.style.left = `${event.clientX}px`;
-    dot.style.top = `${event.clientY}px`;
-    ringX += (event.clientX - ringX) * 0.22;
-    ringY += (event.clientY - ringY) * 0.22;
-    ring.style.left = `${ringX}px`;
-    ring.style.top = `${ringY}px`;
-    const trail = trails[trailIndex];
-    trail.style.left = `${event.clientX}px`;
-    trail.style.top = `${event.clientY}px`;
-    trail.style.opacity = "0.75";
-    trail.style.transform = "translate(-50%, -50%) scale(1)";
-    setTimeout(() => {
-      trail.style.opacity = "0";
-      trail.style.transform = "translate(-50%, -50%) scale(0.25)";
-    }, 180);
-    trailIndex = (trailIndex + 1) % trails.length;
-  });
-  document.addEventListener("mouseover", event => {
-    const interactive = event.target.closest("a, button, input, textarea, .project-card");
-    ring.style.width = interactive ? "52px" : "34px";
-    ring.style.height = interactive ? "52px" : "34px";
-    ring.style.borderColor = interactive ? "rgba(168, 85, 247, 0.75)" : "rgba(34, 211, 238, 0.55)";
-  });
-}
-
-function duplicateMarquee() {
-  const track = $(".marquee__track");
-  track.innerHTML += track.innerHTML;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initLoader();
+  initWelcome();
+  initAmbient();
   initTheme();
   initNav();
-  initTyping();
-  initParticles();
   initReveal();
-  initTilt();
-  initCountersAndSkills();
-  initProjectFilters();
-  initModal();
-  initResumePreview();
-  initDownloadOptions();
+  initPhotoParallax();
+  initPortraitParallax();
+  initTilt3D();
+  initBuildingTilt();
+  initBook();
+  initProjectModals();
   initContact();
-  initScrollTools();
-  initCursor();
-  duplicateMarquee();
 });
-
