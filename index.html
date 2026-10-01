@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mohan Prabu K — Full-Stack, AI & Web3 Developer. I build intelligent, real-world software products from idea to execution. Team Lead Intern @ SHE Software Solutions.">
+  <meta name="description" content="Mohan Prabu K — Software Developer & Product Builder. Full-Stack + AI Developer seeking software/AI internships. Team Lead Intern @ SHE Software Solutions.">
   <meta name="author" content="Mohan Prabu K">
   <meta name="theme-color" content="#ffffff">
-  <meta property="og:title" content="Mohan Prabu K — Full-Stack • AI • Web3 Developer">
+  <meta property="og:title" content="Mohan Prabu K — Software Developer & Product Builder">
   <meta property="og:description" content="I build intelligent, real-world software products from idea to execution. Team Lead Intern @ SHE Software Solutions.">
   <meta property="og:type" content="website">
-  <title>Mohan Prabu K | Full-Stack • AI • Web3 Developer</title>
+  <title>Mohan Prabu K | Software Developer & Product Builder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/images/mohan-professional-photo.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Mohan Prabu K","jobTitle":"Software Developer & Product Builder","alumniOf":{"@type":"CollegeOrUniversity","name":"R P Sarathy Institute of Technology"},"address":{"@type":"PostalAddress","addressLocality":"Salem","addressRegion":"Tamil Nadu","addressCountry":"IN"},"sameAs":["https://github.com/MohanPrabu018-K","https://www.linkedin.com/in/mohan-prabu-061739325"]}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
@@ -30,33 +33,23 @@
     <canvas id="ambientCanvas"></canvas>
   </div>
 
-  <!-- Welcome experience -->
-  <div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-label="Welcome">
-    <div class="welcome__inner">
-      <p class="welcome__eyebrow">Portfolio 2.0</p>
-      <h1 class="welcome__title">WELCOME TO<br>MY WORLD</h1>
-      <p class="welcome__sub">Clean. Minimal. Built like a product.</p>
-      <div class="welcome__bar" aria-hidden="true"><span id="welcomeBar"></span></div>
-      <button class="btn btn--primary welcome__enter" id="welcomeEnter" type="button">Enter <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></button>
-    </div>
-  </div>
-
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="header" id="header">
     <nav class="nav container" aria-label="Main navigation">
       <a href="#home" class="logo" aria-label="Mohan Prabu K — home">
         <span class="logo__mark" aria-hidden="true">M</span>
-        <span class="logo__text">Mohan Prabu K<em>Full-Stack • AI • Web3</em></span>
+        <span class="logo__text">Mohan Prabu K<em>Software Developer</em></span>
       </a>
       <div class="nav__menu" id="navMenu">
         <a href="#home" class="nav__link is-active">Home</a>
         <a href="#about" class="nav__link">About</a>
-        <a href="#journey" class="nav__link">Journey</a>
         <a href="#experience" class="nav__link">Experience</a>
-        <a href="#skills" class="nav__link">Skills</a>
         <a href="#projects" class="nav__link">Projects</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#journey" class="nav__link">Journey</a>
         <a href="#contact" class="nav__link">Contact</a>
+        <a href="#resume" class="nav__link">Resume</a>
       </div>
       <div class="nav__actions">
         <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle theme"><i class="bx bx-moon" aria-hidden="true"></i></button>
@@ -78,10 +71,13 @@
           <p class="pill pill--live"><span class="pulse-dot" aria-hidden="true"></span> Team Lead Intern @ SHE Software Solutions</p>
           <h1 id="heroTitle">MOHAN<br>PRABU K</h1>
           <p class="hero__role">Software Developer &amp; Product Builder</p>
+          <p class="hero__target">Full-Stack + AI Developer · Seeking Software / AI Internships · 2028 Graduate</p>
           <p class="hero__tagline"><strong>I build intelligent, real-world software products from idea to execution.</strong></p>
           <p class="hero__cred">Currently leading Full-Stack &amp; Data Analytics teams at SHE Software Solutions.</p>
-          <p class="hero__building"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> <strong>Currently building</strong> — TaxShield + Faculty Patent Verification System</p>
-          <p class="hero__meta">B.Tech AI &amp; Data Science • 2024–2028 • CGPA 8.01/10 • Salem, India</p>
+          <p class="hero__building"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> <strong>Currently building</strong> — TaxShield + Faculty Patent Verification Portal</p>
+          <p class="hero__meta">B.Tech AI &amp; Data Science · 2024–2028 · CGPA 8.01/10 · Salem, India</p>
+          <p class="hero__avail">Open to Internship Opportunities · Remote / Hybrid · IST (UTC+5:30)</p>
+          <p class="hero__proof" id="heroProof"></p>
           <div class="hero__buttons">
             <a href="#projects" class="btn btn--primary">View My Work <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
             <a href="assets/resume/Mohan_Prabu_K_Resume.pdf" class="btn btn--secondary" download><i class="bx bx-download" aria-hidden="true"></i> Download Resume</a>
@@ -110,7 +106,6 @@
             <div class="hero-portrait-shadow" id="photoShadow" aria-hidden="true"></div>
             <div class="hero-portrait-detail" data-px="4" aria-hidden="true"></div>
           </div>
-          <p class="photo-caption">Team Lead Intern · SHE Software Solutions</p>
         </div>
       </div>
       <a href="#snapshot" class="scroll-hint" aria-label="Scroll to recruiter snapshot">Scroll <i class="bx bx-chevron-down" aria-hidden="true"></i></a>
@@ -120,10 +115,10 @@
     <section class="snapshot" id="snapshot" aria-label="Recruiter snapshot">
       <div class="container snapshot__grid snapshot--3d reveal" data-tilt-group>
         <div class="snapshot__item"><strong>Team Lead Intern</strong><span>SHE Software Solutions</span></div>
-        <div class="snapshot__item"><strong>3 Projects</strong><span>Coordinated</span></div>
-        <div class="snapshot__item"><strong>AI + Full-Stack + Web3</strong><span>Development Areas</span></div>
+        <div class="snapshot__item"><strong>3 Company Projects</strong><span>Coordinated</span></div>
+        <div class="snapshot__item"><strong>1 System in Company Use</strong><span>Barcode ID Management</span></div>
+        <div class="snapshot__item"><strong>2 Completed Builds</strong><span>+ 2 Active Builds</span></div>
         <div class="snapshot__item"><strong>8.01 / 10</strong><span>CGPA</span></div>
-        <div class="snapshot__item"><strong>4</strong><span>Featured Projects</span></div>
       </div>
     </section>
 
@@ -133,18 +128,18 @@
         <div class="reveal">
           <p class="eyebrow eyebrow--numbered"><span class="sec-num">01</span><span class="sec-sep">/</span> About</p>
           <h2 class="section-title" id="aboutTitle">Engineer who ships real products, not just code.</h2>
-          <p class="lead">B.Tech Artificial Intelligence &amp; Data Science (2024–2028) building across full-stack, AI/ML, and Web3 — from idea to execution.</p>
+          <p class="lead">I'm a B.Tech AI &amp; Data Science student (2028) building full-stack products, ML systems, and document-intelligence tools — currently leading teams at SHE Software Solutions and seeking Software / AI internships.</p>
           <div class="about__points">
             <span><i class="bx bx-check" aria-hidden="true"></i> Full-stack product development</span>
-            <span><i class="bx bx-check" aria-hidden="true"></i> AI / ML &amp; document intelligence</span>
-            <span><i class="bx bx-check" aria-hidden="true"></i> Web3 / smart contracts / DApps</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> Machine learning &amp; explainable predictions</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> Web3 internship experience (Solidity, DApps)</span>
             <span><i class="bx bx-check" aria-hidden="true"></i> Team leadership &amp; execution</span>
             <span><i class="bx bx-check" aria-hidden="true"></i> Real company software in use</span>
-            <span><i class="bx bx-check" aria-hidden="true"></i> Continuous learning</span>
+            <span><i class="bx bx-check" aria-hidden="true"></i> Seeking Software / AI internships</span>
           </div>
           <div class="inline-actions">
-            <a href="#journey" class="btn btn--secondary">My Journey <i class="bx bx-book-open" aria-hidden="true"></i></a>
-            <a href="#experience" class="btn btn--link">Experience <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <a href="#experience" class="btn btn--secondary">Experience <i class="bx bx-briefcase" aria-hidden="true"></i></a>
+            <a href="#projects" class="btn btn--link">Projects <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
           </div>
         </div>
         <div class="about__card reveal">
@@ -159,63 +154,25 @@
       </div>
     </section>
 
-    <!-- JOURNEY BOOK -->
-    <section class="section section--tint" id="journey" aria-labelledby="journeyTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow eyebrow--numbered"><span class="sec-num">02</span><span class="sec-sep">/</span> Journey · Signature Experience</p>
-          <h2 class="section-title" id="journeyTitle">MY JOURNEY</h2>
-          <p class="section-sub">From learning technology to building real-world products.</p>
-        </div>
-        <div class="book book--3d reveal" id="book" data-tilt-3d data-tilt-max="2">
-          <div class="book__frame">
-            <button class="book__nav book__nav--prev" id="bookPrev" type="button" aria-label="Previous chapter"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
-            <div class="book__viewport">
-              <div class="book__spine" aria-hidden="true"></div>
-              <article class="book__page" id="bookPage" aria-live="polite" aria-atomic="true">
-                <p class="book__chapter" id="bookKicker">Chapter 01 / 07</p>
-                <p class="book__here" id="bookHere" hidden><span aria-hidden="true">→</span> You are here</p>
-                <h3 id="bookTitle">The Beginning</h3>
-                <p class="book__role" id="bookRole">B.Tech Artificial Intelligence &amp; Data Science • 2024–2028</p>
-                <p class="book__body" id="bookBody">RP Sarathy Institute of Technology. CGPA 8.01/10. Foundation in programming, data, and systems thinking.</p>
-                <ul class="book__list" id="bookList"></ul>
-                <p class="book__meta" id="bookMeta"></p>
-              </article>
-            </div>
-            <button class="book__nav book__nav--next" id="bookNext" type="button" aria-label="Next chapter"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
-          </div>
-          <div class="book__footer">
-            <div class="book__mnav" aria-label="Journey chapter navigation">
-              <button class="btn btn--secondary btn--sm book__mbtn" id="bookPrevM" type="button" aria-label="Previous chapter"><i class="bx bx-chevron-left" aria-hidden="true"></i> Prev</button>
-              <span class="book__counter" id="bookCounter" aria-live="polite">01 / 07</span>
-              <button class="btn btn--secondary btn--sm book__mbtn" id="bookNextM" type="button" aria-label="Next chapter">Next <i class="bx bx-chevron-right" aria-hidden="true"></i></button>
-            </div>
-            <div class="book__dots" id="bookDots" role="tablist" aria-label="Journey chapters"></div>
-            <p class="book__hint">Click • Arrow keys • Swipe on mobile</p>
-            <div class="book__progress" aria-hidden="true"><span id="bookProgress"></span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- EXPERIENCE -->
     <section class="section" id="experience" aria-labelledby="expTitle">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow eyebrow--numbered"><span class="sec-num">03</span><span class="sec-sep">/</span> Experience</p>
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">02</span><span class="sec-sep">/</span> Experience</p>
           <h2 class="section-title" id="expTitle">Real roles. Real responsibility.</h2>
         </div>
         <div class="exp-grid">
           <article class="card card--featured card--she reveal" data-tilt-3d data-tilt-max="3">
             <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Current</span><span class="card__date">June 2026 – Present</span></div>
             <p class="eyebrow">Real-World Experience · SHE Software Solutions</p>
-            <h3>Team Lead Intern — Stipendiary</h3>
+            <h3>Team Lead Intern · Paid Internship</h3>
             <p class="card__org">SHE Software Solutions</p>
             <div class="she-stat"><strong>3</strong><span>Company<br>Projects</span></div>
             <div class="tags tags--teams"><span>Full-Stack Team</span><span>Data Analytics Team</span></div>
             <ul class="check-list">
               <li>Task allocation &amp; project planning</li>
               <li>Progress tracking &amp; team coordination</li>
+              <li>Coordinating implementation across Full-Stack and Data Analytics execution</li>
               <li>Execution ownership across 3 projects</li>
             </ul>
           </article>
@@ -231,9 +188,8 @@
             <h3>Blockchain Developer Intern</h3>
             <p class="card__org">CODTECH IT Solutions</p>
             <ul class="check-list">
-              <li>Smart contracts</li>
-              <li>DApp development</li>
-              <li>Web3 fundamentals</li>
+              <li>Built smart contracts and a Web3 DApp</li>
+              <li>Worked with blockchain fundamentals and decentralized architecture</li>
             </ul>
           </article>
         </div>
@@ -245,8 +201,8 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Proof of Work</p>
-          <h2 class="section-title" id="rwTitle">REAL-WORLD EXPERIENCE</h2>
-          <p class="section-sub">Real company → Real development → Real usage → Leadership</p>
+          <h2 class="section-title" id="rwTitle">REAL-WORLD PROOF</h2>
+          <p class="section-sub">Shipped during an internship. Used by the company today.</p>
         </div>
         <div class="rw-grid">
           <article class="card reveal">
@@ -257,8 +213,15 @@
           <article class="card reveal">
             <p class="eyebrow">Shipped &amp; In Use</p>
             <h3>Employee Barcode Management System</h3>
-            <p><strong>Flutter + Firebase</strong></p>
-            <p>Currently used by the company for employee and intern ID management.</p>
+            <p><strong>Flutter + Firebase</strong> · SHE Software Solutions</p>
+            <p>Built during my Flutter Developer Internship and currently used by the company for employee and intern ID management.</p>
+            <div class="contrib">
+              <h4>My Contribution</h4>
+              <ul class="check-list">
+                <li>Designed and built the barcode-based ID workflow end to end</li>
+                <li>Implemented with Flutter + Firebase during the internship</li>
+              </ul>
+            </div>
             <ol class="barcode-flow" aria-label="Barcode system flow">
               <li>Employee / Intern</li>
               <li>Barcode</li>
@@ -285,91 +248,35 @@
       </div>
     </section>
 
-    <!-- CURRENTLY BUILDING -->
-    <section class="section" id="building" aria-labelledby="buildingTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Now</p>
-          <h2 class="section-title" id="buildingTitle">CURRENTLY BUILDING</h2>
-        </div>
-        <div class="building-grid">
-          <article class="card card--building building-scene reveal" data-btilt>
-            <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Currently Working</span></div>
-            <h3>TaxShield</h3>
-            <p class="card__org">Tax-Readiness Intelligence Platform</p>
-            <div class="building-visual" aria-hidden="true"><i class="bx bx-shield-quarter"></i><span class="bv-ring"></span></div>
-            <p>Evidence, obligations, risks, deadlines, scenarios, and a 0–100 readiness score.</p>
-            <a class="btn btn--link link--underline" href="#projects" data-goto-project="taxshield">View case study <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
-            <span class="building-detail" aria-hidden="true"></span>
-          </article>
-          <article class="card card--building building-scene reveal" data-btilt>
-            <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Currently Working</span></div>
-            <h3>FPP</h3>
-            <p class="card__org">Faculty Patent Profile Verification System</p>
-            <div class="building-visual" aria-hidden="true"><span class="bv-doc"></span><i class="bx bx-scan"></i></div>
-            <p>OCR → extraction → verification → duplicate checks → structured review.</p>
-            <a class="btn btn--link link--underline" href="#projects" data-goto-project="fpp">View case study <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
-            <span class="building-detail" aria-hidden="true"></span>
-          </article>
-        </div>
-        <ol class="dev-timeline reveal" aria-label="Development timeline">
-          <li><strong>Research</strong><span>Problem &amp; scope</span></li>
-          <li><strong>Architecture</strong><span>System design</span></li>
-          <li class="is-active"><strong>Development</strong><span>In progress</span></li>
-          <li><strong>Testing</strong><span>Real cases</span></li>
-          <li><strong>Refinement</strong><span>Iterate</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section section--tint" id="skills" aria-labelledby="skillsTitle">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow eyebrow--numbered"><span class="sec-num">05</span><span class="sec-sep">/</span> Skills</p>
-          <h2 class="section-title" id="skillsTitle">Categorized. No fake percentages.</h2>
-        </div>
-        <div class="skills-grid">
-          <article class="card reveal"><h3>Languages</h3><div class="tags"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>HTML</span><span>CSS</span></div></article>
-          <article class="card reveal"><h3>Frontend</h3><div class="tags"><span>React.js</span><span>Next.js</span><span>Tailwind CSS</span><span>Flutter</span></div></article>
-          <article class="card reveal"><h3>Backend</h3><div class="tags"><span>Flask</span><span>REST APIs</span></div></article>
-          <article class="card reveal"><h3>AI / ML</h3><div class="tags"><span>Machine Learning</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Explainable AI</span><span>Generative AI</span><span>LLMs</span><span>Agentic AI</span></div></article>
-          <article class="card reveal"><h3>Blockchain / Web3</h3><div class="tags"><span>Solidity</span><span>Smart Contract Development</span><span>Web3.js</span><span>Polygon</span><span>DApps</span></div></article>
-          <article class="card reveal"><h3>Databases</h3><div class="tags"><span>PostgreSQL</span><span>MongoDB</span><span>Prisma</span><span>Firebase</span></div></article>
-          <article class="card reveal"><h3>Document Intelligence</h3><div class="tags"><span>OCR</span><span>OpenCV</span><span>Tesseract</span><span>pyzbar</span></div></article>
-          <article class="card reveal"><h3>Tools &amp; Deployment</h3><div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Jupyter</span><span>Jira</span><span>Microsoft Teams</span><span>Cloudflare</span><span>Vercel</span><span>Render</span></div></article>
-          <article class="card reveal"><h3>Core &amp; Leadership</h3><div class="tags"><span>DSA</span><span>OOP</span><span>Problem-Solving</span><span>Team Management</span><span>Project Management</span><span>Task Allocation</span><span>Team Coordination</span><span>Communication</span></div></article>
-        </div>
-      </div>
-    </section>
-
     <!-- PROJECTS -->
     <section class="section" id="projects" aria-labelledby="projectsTitle">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow eyebrow--numbered"><span class="sec-num">04</span><span class="sec-sep">/</span> Projects</p>
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">03</span><span class="sec-sep">/</span> Projects</p>
           <h2 class="section-title" id="projectsTitle">Product case studies.</h2>
-          <p class="section-sub">Every project has Live Demo, GitHub, and Project Report actions. Unavailable links show an elegant placeholder — easy to replace later in one config.</p>
+          <p class="section-sub">What I built, what I personally contributed, and what you can verify.</p>
         </div>
         <div class="projects-grid">
 
           <article class="card project project--3d project--object reveal" id="project-internflow" data-project-card="internflow" data-tilt-3d data-tilt-max="4">
             <p class="status status--done" data-depth="24"><span aria-hidden="true">✓</span> Completed</p>
             <h3 data-depth="6">InternFlow</h3>
-            <p class="card__org" data-depth="6">AI-Powered Internship Recruitment SaaS</p>
-            <p class="proof-label">Full-Stack SaaS · Auth · RBAC · Recruitment Workflow</p>
+            <p class="card__org" data-depth="6">Internship recruitment, from intake to onboarding — with AI-assisted screening and ranking</p>
             <div class="project-visual visual--panels" aria-hidden="true"><span class="pv-panel pv-a"></span><span class="pv-panel pv-b"></span><span class="pv-panel pv-c"></span><i class="bx bx-git-compare"></i><span>Intake → Match → Onboard</span><span class="pv-dot"></span></div>
-            <p>Recruitment workflows for application intake, candidate management, analytics, auth, RBAC, and AI-assisted onboarding.</p>
+            <p class="prob"><strong>Problem:</strong> Recruitment runs across scattered sheets, inboxes, and notes — no shared pipeline, inconsistent evaluation, manual onboarding.</p>
+            <p class="prob"><strong>Built for:</strong> recruiters and teams running internship hiring.</p>
             <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind CSS</span><span>Prisma</span><span>PostgreSQL</span></div>
+            <p class="meta-line">Auth: RBAC via NextAuth · DB: PostgreSQL + Prisma · Deploy: —</p>
             <ul class="check-list">
               <li>Application intake &amp; candidate management</li>
               <li>Analytics + authentication + RBAC</li>
-              <li>AI-powered recruitment workflows</li>
+              <li>AI-assisted screening, ranking, and assessment generation</li>
             </ul>
             <div class="contrib" data-depth="6">
               <h4>My Contribution</h4>
               <p>Full product flow — data model, APIs, auth/RBAC, and recruitment UI.</p>
             </div>
+            <p class="metric-line">22 routes · 15 database models · 7 tests passing · 0 build errors</p>
             <details class="tech-details">
               <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
               <div class="tech-details__body">
@@ -377,24 +284,100 @@
                 <p><strong>Data flow</strong><span>Application intake → validation → PostgreSQL via Prisma → candidate pipeline → analytics → onboarding checklist.</span></p>
                 <p><strong>Backend</strong><span>REST-style API routes for applications, candidates, and analytics.</span></p>
                 <p><strong>Database</strong><span>PostgreSQL models for users, roles, applications, and onboarding state.</span></p>
-                <p><strong>AI / Validation</strong><span>AI-assisted recruitment workflows for screening support and onboarding guidance.</span></p>
+                <p><strong>AI</strong><span>AI assists screening, ranking, assessment generation, and recruiter search — it does not make autonomous decisions.</span></p>
+                <p><strong>Validation</strong><span>Vitest suite passing; 22-route production build with 0 errors.</span></p>
               </div>
             </details>
+            <p class="note"><strong>Tradeoff:</strong> local filesystem storage behind an S3-ready abstraction — object-storage cutover is the pending next step.</p>
             <div class="project__actions" data-depth="6">
-              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="internflow"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
-              <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="internflow"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-action="live" data-project="internflow"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--primary btn--sm" type="button" data-action="github" data-project="internflow"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
               <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="internflow"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
             </div>
           </article>
 
-          <article class="card project project--3d project--object reveal" id="project-taxshield" data-project-card="taxshield" data-tilt-3d data-tilt-max="4">
+          <article class="card project project--3d project--object reveal" id="project-agrosense" data-project-card="agrosense" data-tilt-3d data-tilt-max="4">
+            <p class="status status--done" data-depth="24"><span aria-hidden="true">✓</span> Completed</p>
+            <h3 data-depth="6">AgroSense AI</h3>
+            <p class="card__org" data-depth="6">Crop, fertilizer, and disease guidance from soil, climate, and leaf-image inputs</p>
+            <div class="project-visual visual--nodes" aria-hidden="true"><span class="pv-link pv-l1"></span><span class="pv-link pv-l2"></span><span class="pv-node pv-n1"></span><span class="pv-node pv-n2"></span><span class="pv-node pv-n3"></span><i class="bx bx-leaf"></i><span>Soil + Climate → Recommendation</span><span class="pv-dot"></span></div>
+            <p class="prob"><strong>Problem:</strong> Crop choice, nutrient balance, and disease signs are judged across separate tools and guesswork — with no single decision interface.</p>
+            <p class="prob"><strong>Built for:</strong> farmers, agriculture students, and early agri-tech users.</p>
+            <div class="tags"><span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Random Forest</span></div>
+            <p class="meta-line">Auth: Session login · DB: Local JSON store · Deploy: Local</p>
+            <ul class="check-list">
+              <li>Crop / fertilizer / disease prediction</li>
+              <li>Soil &amp; climate parameter inputs</li>
+              <li>Explainable prediction insights</li>
+            </ul>
+            <div class="contrib" data-depth="6">
+              <h4>My Contribution</h4>
+              <p>ML models, Flask backend, and farmer-friendly UI.</p>
+            </div>
+            <p class="metric-line">22 crop classes · 2,200-row dataset · 5 disease-risk categories</p>
+            <details class="tech-details">
+              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+              <div class="tech-details__body">
+                <p><strong>Architecture</strong><span>Flask backend serving scikit-learn Random Forest models behind a simple input UI.</span></p>
+                <p><strong>Data flow</strong><span>Soil / climate parameters → preprocessing → model inference → explainable insight → recommendation.</span></p>
+                <p><strong>Backend</strong><span>Flask routes for prediction, input validation, and result rendering.</span></p>
+                <p><strong>Model</strong><span>Random Forest classifiers with feature-importance explanations; evaluation details documented in the project report.</span></p>
+                <p><strong>Validation</strong><span>Tested against real soil/climate input cases.</span></p>
+              </div>
+            </details>
+            <p class="note"><strong>Tradeoff:</strong> JSON file storage suits local demo scale — the production path is PostgreSQL.</p>
+            <div class="project__actions" data-depth="6">
+              <button class="btn btn--secondary btn--sm" type="button" data-action="live" data-project="agrosense"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--primary btn--sm" type="button" data-action="github" data-project="agrosense"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="agrosense"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
+            </div>
+          </article>
+
+          <article class="card project project--3d project--object reveal" id="project-fpp" data-project-card="fpp" data-tilt-3d data-tilt-max="4">
             <p class="status status--current" data-depth="24"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Currently Building</p>
+            <h3 data-depth="6">Faculty Patent Verification Portal</h3>
+            <p class="card__org" data-depth="6">FPP · Upload-to-verified-review workflow for faculty patents and designs</p>
+            <div class="project-visual visual--stack" aria-hidden="true"><span class="pv-doc pv-a"></span><span class="pv-doc pv-b"></span><span class="pv-doc pv-c"></span><i class="bx bx-scan"></i><span>Upload → OCR → Verified Review</span><span class="pv-dot"></span></div>
+            <p class="prob"><strong>Problem:</strong> Faculty IP records arrive over email and spreadsheets — hard to verify, deduplicate, and review with evidence.</p>
+            <p class="prob"><strong>Built for:</strong> institutions managing faculty patent and design records. College team project.</p>
+            <div class="tags"><span>FastAPI</span><span>PostgreSQL</span><span>OCR</span><span>Tesseract</span><span>OpenCV</span></div>
+            <p class="meta-line">Auth: JWT + CSRF · DB: PostgreSQL 16 · Deploy: —</p>
+            <ul class="check-list">
+              <li>OCR extraction pipeline</li>
+              <li>Verification + duplicate checks</li>
+              <li>Structured review workflow</li>
+            </ul>
+            <div class="contrib" data-depth="6">
+              <h4>My Contribution</h4>
+              <p>OCR pipeline, verification logic, and review interface — built as part of a college team project.</p>
+            </div>
+            <p class="metric-line">11-step verification pipeline · 4 terminal review states</p>
+            <details class="tech-details">
+              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+              <div class="tech-details__body">
+                <p><strong>Architecture</strong><span>Upload → OCR → extraction → verification → review queue.</span></p>
+                <p><strong>Data flow</strong><span>Document upload → Tesseract / OpenCV extraction → field verification → duplicate / conflict checks → structured review.</span></p>
+                <p><strong>Backend</strong><span>FastAPI routes with validation, review state, and PostgreSQL persistence.</span></p>
+                <p><strong>Processing</strong><span>Image preprocessing, text extraction, and rule-based verification.</span></p>
+                <p><strong>Validation</strong><span>In progress — only the flows shown here are claimed.</span></p>
+              </div>
+            </details>
+            <p class="note"><strong>Tradeoff:</strong> in-process background tasks instead of Celery/Redis — simpler to operate on a single node.</p>
+            <div class="project__actions" data-depth="6">
+              <button class="btn btn--secondary btn--sm" type="button" data-action="live" data-project="fpp"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--primary btn--sm" type="button" data-action="github" data-project="fpp"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
+              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="fpp"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
+            </div>
+          </article>
+
+          <article class="card project project--3d project--object reveal" id="project-taxshield" data-project-card="taxshield" data-tilt-3d data-tilt-max="4">
+            <p class="status status--current" data-depth="24"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Active Build</p>
             <h3 data-depth="6">TaxShield</h3>
-            <p class="card__org" data-depth="6">Tax-Readiness Intelligence Platform</p>
-            <p class="proof-label">Rules + AI · Document Intelligence · Financial Readiness</p>
+            <p class="card__org" data-depth="6">Tax-readiness intelligence: obligations, evidence, risks, deadlines, and readiness in one view</p>
             <div class="project-visual visual--docs" aria-hidden="true"><span class="pv-doc pv-a"></span><span class="pv-doc pv-b"></span><span class="pv-node pv-n1"></span><span class="pv-node pv-n2"></span><i class="bx bx-shield-quarter"></i><span>Docs → Rules + AI → Score</span><span class="pv-dot"></span></div>
-            <p>Turns documents into evidence, obligations, risks, deadlines, scenarios, and a 0–100 readiness score.</p>
+            <p class="prob"><strong>Problem:</strong> Tax readiness lives across scattered documents and deadlines — obligations, evidence, and risks are hard to track proactively.</p>
             <div class="tags"><span>AI</span><span>Rule-Based Systems</span><span>Document Intelligence</span><span>Financial Data Processing</span></div>
+            <p class="meta-line">Stack: In active development</p>
             <ul class="check-list">
               <li>Evidence &amp; obligation mapping</li>
               <li>Risk + deadline tracking</li>
@@ -410,82 +393,14 @@
                 <p><strong>Architecture</strong><span>Document intake → document intelligence → rules + AI engine → readiness output.</span></p>
                 <p><strong>Data flow</strong><span>Documents / user data → extraction → evidence / obligations / risks → deadlines / scenarios → 0–100 score.</span></p>
                 <p><strong>Backend</strong><span>Rule checks augmented by AI interpretation over extracted document data.</span></p>
-                <p><strong>AI / Processing</strong><span>Financial data processing with evidence, obligation, risk, and scenario mapping.</span></p>
+                <p><strong>AI</strong><span>Rule-based intelligence with AI-assisted document analysis — early build, scope evolving with implementation.</span></p>
                 <p><strong>Validation</strong><span>In progress — only the flows shown here are claimed.</span></p>
               </div>
             </details>
             <div class="project__actions" data-depth="6">
-              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="taxshield"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
+              <button class="btn btn--secondary btn--sm" type="button" data-action="live" data-project="taxshield"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
               <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="taxshield"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
               <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="taxshield"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
-            </div>
-          </article>
-
-          <article class="card project project--3d project--object reveal" id="project-agrosense" data-project-card="agrosense" data-tilt-3d data-tilt-max="4">
-            <p class="status status--done" data-depth="24"><span aria-hidden="true">✓</span> Completed</p>
-            <h3 data-depth="6">AgroSense AI</h3>
-            <p class="card__org" data-depth="6">Agricultural Recommendation System</p>
-            <p class="proof-label">Random Forest · Prediction · Explainability · Flask</p>
-            <div class="project-visual visual--nodes" aria-hidden="true"><span class="pv-link pv-l1"></span><span class="pv-link pv-l2"></span><span class="pv-node pv-n1"></span><span class="pv-node pv-n2"></span><span class="pv-node pv-n3"></span><i class="bx bx-leaf"></i><span>Soil + Climate → Recommendation</span><span class="pv-dot"></span></div>
-            <p>Crop, fertilizer, and disease prediction from soil/climate parameters with explainable insights.</p>
-            <div class="tags"><span>Python</span><span>Flask</span><span>Scikit-learn</span><span>Random Forest</span></div>
-            <ul class="check-list">
-              <li>Crop / fertilizer / disease prediction</li>
-              <li>Soil &amp; climate parameter inputs</li>
-              <li>Explainable prediction insights</li>
-            </ul>
-            <div class="contrib" data-depth="6">
-              <h4>My Contribution</h4>
-              <p>ML models, Flask backend, and farmer-friendly UI.</p>
-            </div>
-            <details class="tech-details">
-              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
-              <div class="tech-details__body">
-                <p><strong>Architecture</strong><span>Flask backend serving scikit-learn Random Forest models behind a simple input UI.</span></p>
-                <p><strong>Data flow</strong><span>Soil / climate parameters → preprocessing → model inference → explainable insight → recommendation.</span></p>
-                <p><strong>Backend</strong><span>Flask routes for prediction, input validation, and result rendering.</span></p>
-                <p><strong>AI / Processing</strong><span>Random Forest classifiers with feature-importance style explanations.</span></p>
-                <p><strong>Validation</strong><span>Tested against real soil/climate input cases.</span></p>
-              </div>
-            </details>
-            <div class="project__actions" data-depth="6">
-              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="agrosense"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
-              <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="agrosense"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
-              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="agrosense"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
-            </div>
-          </article>
-
-          <article class="card project project--3d project--object reveal" id="project-fpp" data-project-card="fpp" data-tilt-3d data-tilt-max="4">
-            <p class="status status--current" data-depth="24"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Currently Building</p>
-            <h3 data-depth="6">FPP</h3>
-            <p class="card__org" data-depth="6">Faculty Patent Profile Verification System</p>
-            <p class="proof-label">OCR · Verification · Duplicate Detection · Review Workflow</p>
-            <div class="project-visual visual--stack" aria-hidden="true"><span class="pv-doc pv-a"></span><span class="pv-doc pv-b"></span><span class="pv-doc pv-c"></span><i class="bx bx-scan"></i><span>Upload → OCR → Verified Review</span><span class="pv-dot"></span></div>
-            <p>Document upload, OCR extraction, verification, duplicate/conflict checks, and structured review.</p>
-            <div class="tags"><span>OCR</span><span>Tesseract</span><span>OpenCV</span><span>Full-Stack</span></div>
-            <ul class="check-list">
-              <li>OCR extraction pipeline</li>
-              <li>Verification + duplicate checks</li>
-              <li>Structured review workflow</li>
-            </ul>
-            <div class="contrib" data-depth="6">
-              <h4>My Contribution</h4>
-              <p>OCR pipeline, verification logic, and review interface — built as part of a college team project.</p>
-            </div>
-            <details class="tech-details">
-              <summary>Explore technical details <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
-              <div class="tech-details__body">
-                <p><strong>Architecture</strong><span>Upload → OCR → extraction → verification → review queue.</span></p>
-                <p><strong>Data flow</strong><span>Document upload → Tesseract / OpenCV extraction → field verification → duplicate / conflict checks → structured review.</span></p>
-                <p><strong>Backend</strong><span>Document processing routes with validation and review state.</span></p>
-                <p><strong>AI / Processing</strong><span>Image preprocessing, text extraction, and rule-based verification.</span></p>
-                <p><strong>Validation</strong><span>In progress — only the flows shown here are claimed.</span></p>
-              </div>
-            </details>
-            <div class="project__actions" data-depth="6">
-              <button class="btn btn--primary btn--sm" type="button" data-action="live" data-project="fpp"><i class="bx bx-link-external" aria-hidden="true"></i> Live Demo</button>
-              <button class="btn btn--secondary btn--sm" type="button" data-action="github" data-project="fpp"><i class="bx bxl-github" aria-hidden="true"></i> GitHub</button>
-              <button class="btn btn--ghost btn--sm" type="button" data-action="report" data-project="fpp"><i class="bx bx-file" aria-hidden="true"></i> Project Report</button>
             </div>
           </article>
 
@@ -535,55 +450,167 @@
               <li><strong>Onboarding / Recommendation</strong></li>
             </ol>
             <p class="note">Only implemented capabilities are shown. No exaggerated claims.</p>
+            <div class="inline-actions">
+              <a class="btn btn--link arch-link" href="#project-internflow">InternFlow <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+              <a class="btn btn--link arch-link" href="#project-agrosense">AgroSense AI <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- HOW I BUILD / WHAT I BUILD -->
-    <section class="section" id="process" aria-labelledby="processTitle">
-      <div class="container split">
-        <div class="reveal">
-          <p class="eyebrow">Process</p>
-          <h2 class="section-title" id="processTitle">HOW I BUILD</h2>
-          <ol class="steps">
-            <li><strong>01 — Understand</strong><span>Problem, users, constraints</span></li>
-            <li><strong>02 — Design</strong><span>Simple, clean UX first</span></li>
-            <li><strong>03 — Develop</strong><span>Full-stack + AI + Web3</span></li>
-            <li><strong>04 — Integrate</strong><span>APIs, data, auth</span></li>
-            <li><strong>05 — Test</strong><span>Real cases, edge cases</span></li>
-            <li><strong>06 — Deliver</strong><span>Ship, measure, iterate</span></li>
-          </ol>
+    <!-- SKILLS -->
+    <section class="section section--tint" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">04</span><span class="sec-sep">/</span> Skills</p>
+          <h2 class="section-title" id="skillsTitle">Core stack, proven on real builds.</h2>
+          <p class="section-sub">Every item below is backed by project or internship evidence.</p>
         </div>
-        <div class="reveal" id="what">
-          <p class="eyebrow">Capabilities</p>
-          <h2 class="section-title">WHAT I BUILD</h2>
-          <div class="what-list">
-            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--orbit" aria-hidden="true"></span><h3>Intelligent Applications</h3><p>AI / ML / LLM / Agentic AI</p></article>
-            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--layers" aria-hidden="true"></span><h3>Full-Stack Products</h3><p>Frontend → Backend → Database → APIs</p></article>
-            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--nodes" aria-hidden="true"></span><h3>Web3 Applications</h3><p>Smart Contracts → DApps → Blockchain</p></article>
-            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--docs" aria-hidden="true"></span><h3>Document Intelligence</h3><p>OCR → Processing → Verification</p></article>
-            <article data-tilt-3d data-tilt-max="3"><span class="what-icon what-icon--team" aria-hidden="true"></span><h3>Team Execution</h3><p>Planning → Allocation → Coordination → Delivery</p></article>
+        <div class="skills-grid">
+          <article class="card reveal"><h3>Languages</h3><div class="tags"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span></div></article>
+          <article class="card reveal"><h3>Frontend</h3><div class="tags"><span>React</span><span>Next.js</span><span>HTML</span><span>CSS</span><span>Tailwind CSS</span><span>Flutter</span></div></article>
+          <article class="card reveal"><h3>Backend / ORM</h3><div class="tags"><span>Flask</span><span>REST APIs</span><span>Prisma</span></div></article>
+          <article class="card reveal"><h3>AI / Data</h3><div class="tags"><span>Machine Learning</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Explainable AI</span></div></article>
+          <article class="card reveal"><h3>Document Intelligence</h3><div class="tags"><span>OCR</span><span>OpenCV</span><span>Tesseract</span><span>pyzbar</span></div></article>
+          <article class="card reveal"><h3>Databases</h3><div class="tags"><span>PostgreSQL</span><span>MongoDB</span><span>Firebase</span></div></article>
+        </div>
+        <details class="tech-details reveal">
+          <summary>View Full Technical Stack <i class="bx bx-chevron-down" aria-hidden="true"></i></summary>
+          <div class="tech-details__body">
+            <p><strong>Languages</strong><span>Python, JavaScript, TypeScript, SQL, HTML, CSS</span></p>
+            <p><strong>Frontend</strong><span>React.js, Next.js, Tailwind CSS, Flutter</span></p>
+            <p><strong>Backend</strong><span>Flask, REST APIs, Prisma</span></p>
+            <p><strong>AI / ML</strong><span>Machine Learning, Scikit-learn, Pandas, NumPy, Explainable AI, Generative AI, LLMs, Agentic AI</span></p>
+            <p><strong>Blockchain / Web3</strong><span>Solidity, Smart Contract Development, Web3.js, Polygon, DApps — internship experience</span></p>
+            <p><strong>Databases</strong><span>PostgreSQL, MongoDB, Prisma, Firebase</span></p>
+            <p><strong>Document Intelligence</strong><span>OCR, OpenCV, Tesseract, pyzbar</span></p>
+            <p><strong>Tools &amp; Deployment</strong><span>Git, GitHub, VS Code, Jupyter, Jira, Microsoft Teams, Cloudflare, Vercel, Render</span></p>
+            <p><strong>Core &amp; Leadership</strong><span>DSA, OOP, Problem-Solving, Team Management, Project Management, Task Allocation, Team Coordination, Communication</span></p>
           </div>
-        </div>
+        </details>
       </div>
     </section>
 
-    <!-- BUILD PHILOSOPHY -->
-    <section class="section section--tint" id="philosophy" aria-labelledby="philosophyTitle">
+    <!-- JOURNEY BOOK -->
+    <section class="section section--tint" id="journey" aria-labelledby="journeyTitle">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Philosophy</p>
-          <h2 class="section-title" id="philosophyTitle">HOW I APPROACH SOFTWARE</h2>
-          <p class="section-sub">Understand the problem. Design the system. Build the product. Test the reality. Improve continuously.</p>
+          <p class="eyebrow eyebrow--numbered"><span class="sec-num">05</span><span class="sec-sep">/</span> Journey</p>
+          <h2 class="section-title" id="journeyTitle">MY JOURNEY</h2>
+          <p class="section-sub">From learning technology to building real-world products.</p>
         </div>
-        <ol class="philo-grid">
-          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">01</span><span class="what-icon what-icon--orbit" aria-hidden="true"></span><strong>Understand</strong><span>Problem first</span></li>
-          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">02</span><span class="what-icon what-icon--layers" aria-hidden="true"></span><strong>Design</strong><span>System before code</span></li>
-          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">03</span><span class="what-icon what-icon--nodes" aria-hidden="true"></span><strong>Build</strong><span>Ship the product</span></li>
-          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">04</span><span class="what-icon what-icon--docs" aria-hidden="true"></span><strong>Test</strong><span>Reality over assumptions</span></li>
-          <li class="reveal" data-tilt-3d data-tilt-max="3"><span class="philo-num">05</span><span class="what-icon what-icon--team" aria-hidden="true"></span><strong>Deliver</strong><span>Improve continuously</span></li>
+        <ol class="journey-static reveal" aria-label="Journey timeline">
+          <li><strong>2024</strong><span>B.Tech AI &amp; Data Science begins</span></li>
+          <li><strong>2025</strong><span>Blockchain Developer Intern · CODTECH</span></li>
+          <li><strong>2026</strong><span>Flutter Developer Intern · SHE Software Solutions</span></li>
+          <li><strong>2026</strong><span>Team Lead Intern · SHE Software Solutions</span></li>
+          <li><strong>Now</strong><span>TaxShield + Faculty Patent Verification Portal</span></li>
         </ol>
+        <div class="book book--3d reveal" id="book" data-tilt-3d data-tilt-max="2">
+          <div class="book__frame">
+            <button class="book__nav book__nav--prev" id="bookPrev" type="button" aria-label="Previous chapter"><i class="bx bx-chevron-left" aria-hidden="true"></i></button>
+            <div class="book__viewport">
+              <div class="book__spine" aria-hidden="true"></div>
+              <article class="book__page" id="bookPage" aria-live="polite" aria-atomic="true">
+                <p class="book__chapter" id="bookKicker">Chapter 01 / 07</p>
+                <p class="book__here" id="bookHere" hidden><span aria-hidden="true">→</span> You are here</p>
+                <h3 id="bookTitle">The Beginning</h3>
+                <p class="book__role" id="bookRole">B.Tech Artificial Intelligence &amp; Data Science • 2024–2028</p>
+                <p class="book__body" id="bookBody">RP Sarathy Institute of Technology. CGPA 8.01/10. Foundation in programming, data, and systems thinking.</p>
+                <ul class="book__list" id="bookList"></ul>
+                <p class="book__meta" id="bookMeta"></p>
+              </article>
+            </div>
+            <button class="book__nav book__nav--next" id="bookNext" type="button" aria-label="Next chapter"><i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="book__footer">
+            <div class="book__mnav" aria-label="Journey chapter navigation">
+              <button class="btn btn--secondary btn--sm book__mbtn" id="bookPrevM" type="button" aria-label="Previous chapter"><i class="bx bx-chevron-left" aria-hidden="true"></i> Prev</button>
+              <span class="book__counter" id="bookCounter" aria-live="polite">01 / 07</span>
+              <button class="btn btn--secondary btn--sm book__mbtn" id="bookNextM" type="button" aria-label="Next chapter">Next <i class="bx bx-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="book__dots" id="bookDots" role="tablist" aria-label="Journey chapters"></div>
+            <p class="book__hint">Click • Arrow keys • Swipe on mobile</p>
+            <div class="book__progress" aria-hidden="true"><span id="bookProgress"></span></div>
+          </div>
+        </div>
+        <noscript>
+          <ol>
+            <li>Chapter 01 — The Beginning: B.Tech AI &amp; Data Science, 2024–2028, CGPA 8.01/10.</li>
+            <li>Chapter 02 — Exploring Blockchain: Blockchain Developer Intern, CODTECH IT Solutions, June 2025 – July 2025.</li>
+            <li>Chapter 03 — Building for Industry: Flutter Developer Intern, SHE Software Solutions, March 2026 – May 2026. Employee Barcode Management System, now in company use.</li>
+            <li>Chapter 04 — Taking Leadership: Team Lead Intern, SHE Software Solutions, June 2026 – Present. Leading Full-Stack and Data Analytics teams across 3 projects.</li>
+            <li>Chapter 05 — Building Products: InternFlow and AgroSense AI, completed.</li>
+            <li>Chapter 06 — Current Chapter: TaxShield and Faculty Patent Verification Portal, currently building. You are here.</li>
+            <li>Chapter 07 — What's Next: Full-Stack, AI, Web3, product engineering, continuous learning.</li>
+          </ol>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- CURRENTLY BUILDING -->
+    <section class="section" id="building" aria-labelledby="buildingTitle">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Now</p>
+          <h2 class="section-title" id="buildingTitle">CURRENTLY BUILDING</h2>
+        </div>
+        <div class="building-grid">
+          <article class="card card--building building-scene reveal" data-btilt>
+            <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Active Build</span></div>
+            <h3>TaxShield</h3>
+            <p class="card__org">Tax-Readiness Intelligence Platform</p>
+            <div class="building-visual" aria-hidden="true"><i class="bx bx-shield-quarter"></i><span class="bv-ring"></span></div>
+            <p>Evidence, obligations, risks, deadlines, scenarios, and a 0–100 readiness score.</p>
+            <a class="btn btn--link link--underline" href="#projects" data-goto-project="taxshield">View case study <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <span class="building-detail" aria-hidden="true"></span>
+          </article>
+          <article class="card card--building building-scene reveal" data-btilt>
+            <div class="card__top"><span class="status status--current"><span class="pulse-dot" aria-hidden="true"></span> Currently Building</span></div>
+            <h3>Faculty Patent Verification Portal (FPP)</h3>
+            <p class="card__org">College Team Project · Document Verification System</p>
+            <div class="building-visual" aria-hidden="true"><span class="bv-doc"></span><i class="bx bx-scan"></i></div>
+            <p>OCR → extraction → verification → duplicate checks → structured review.</p>
+            <a class="btn btn--link link--underline" href="#projects" data-goto-project="fpp">View case study <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+            <span class="building-detail" aria-hidden="true"></span>
+          </article>
+        </div>
+        <ol class="dev-timeline reveal" aria-label="Development timeline">
+          <li><strong>Research</strong><span>Problem &amp; scope</span></li>
+          <li><strong>Architecture</strong><span>System design</span></li>
+          <li class="is-active"><strong>Development</strong><span>In progress</span></li>
+          <li><strong>Testing</strong><span>Real cases</span></li>
+          <li><strong>Refinement</strong><span>Iterate</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- HOW I SHIP -->
+    <section class="section" id="ship" aria-labelledby="shipTitle">
+      <div class="container split">
+        <div class="reveal">
+          <p class="eyebrow">Process</p>
+          <h2 class="section-title" id="shipTitle">HOW I SHIP</h2>
+          <ol class="steps">
+            <li><strong>01 — Understand</strong><span>Problem, users, constraints</span></li>
+            <li><strong>02 — Design</strong><span>Simple, clean UX first</span></li>
+            <li><strong>03 — Build</strong><span>Full-stack + AI + document workflows</span></li>
+            <li><strong>04 — Test</strong><span>Real cases, edge cases</span></li>
+            <li><strong>05 — Deliver</strong><span>Ship, measure, iterate</span></li>
+          </ol>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2 class="section-title">WHAT I BUILD</h2>
+          <div class="cap-strip">
+            <a href="#project-internflow">Full-Stack Applications</a>
+            <a href="#project-agrosense">AI / ML Systems</a>
+            <a href="#project-fpp">Document Intelligence</a>
+            <a href="#project-agrosense">Data-Driven Products</a>
+            <a href="#experience">Team Execution</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -611,13 +638,13 @@
         </div>
         <div class="verify-grid">
           <a class="card verify-card reveal" href="https://github.com/MohanPrabu018-K" target="_blank" rel="noreferrer">
-            <i class="bx bxl-github" aria-hidden="true"></i><h3>GitHub</h3><p>View my code →</p>
+            <i class="bx bxl-github" aria-hidden="true"></i><h3>GitHub</h3><p>Source code and selected project repositories →</p>
           </a>
           <a class="card verify-card reveal" href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer">
-            <i class="bx bxl-linkedin" aria-hidden="true"></i><h3>LinkedIn</h3><p>View my professional profile →</p>
+            <i class="bx bxl-linkedin" aria-hidden="true"></i><h3>LinkedIn</h3><p>Professional experience and career profile →</p>
           </a>
           <a class="card verify-card reveal" href="assets/resume/Mohan_Prabu_K_Resume.pdf" target="_blank" rel="noreferrer">
-            <i class="bx bx-file" aria-hidden="true"></i><h3>Resume</h3><p>View my complete profile →</p>
+            <i class="bx bx-file" aria-hidden="true"></i><h3>Resume</h3><p>One-page professional profile →</p>
           </a>
         </div>
       </div>
@@ -630,6 +657,7 @@
           <p class="eyebrow eyebrow--numbered"><span class="sec-num">06</span><span class="sec-sep">/</span> Contact</p>
           <h2 class="section-title" id="contactTitle">LET'S BUILD SOMETHING</h2>
           <p class="lead">Have an opportunity, project, or idea? Let's talk.</p>
+          <p class="hero__avail">Open to Internship Opportunities · Remote / Hybrid</p>
           <div class="contact-list">
             <a href="mailto:mohanprabu1823@gmail.com"><i class="bx bx-envelope" aria-hidden="true"></i> mohanprabu1823@gmail.com</a>
             <a href="tel:+919884801823"><i class="bx bx-phone" aria-hidden="true"></i> +91 9884801823</a>
@@ -648,6 +676,7 @@
           <label><span>Message</span><textarea name="message" rows="5" placeholder="Opportunity, project, or idea…" required minlength="12"></textarea></label>
           <button type="submit" class="btn btn--primary">Send Message <i class="bx bx-send" aria-hidden="true"></i></button>
           <p class="form-status" id="formStatus" aria-live="polite"></p>
+          <p class="form-note">This form opens your email app. No data is stored by this portfolio.</p>
         </form>
       </div>
     </section>
@@ -664,20 +693,20 @@
         <a href="https://www.linkedin.com/in/mohan-prabu-061739325" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
         <a href="mailto:mohanprabu1823@gmail.com" aria-label="Email"><i class="bx bx-envelope" aria-hidden="true"></i></a>
       </div>
-      <p>Designed &amp; built by Mohan Prabu K · HTML • CSS • JavaScript · © 2026 Mohan Prabu K</p>
+      <p>Designed &amp; built by Mohan Prabu K · © 2026<br><span class="footer__built">Built with HTML, CSS &amp; JavaScript.</span></p>
     </div>
   </footer>
 
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i class="bx bx-chevron-up" aria-hidden="true"></i></button>
 
-  <!-- Generic placeholder / report modal -->
+  <!-- Project report modal -->
   <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
     <div class="modal__backdrop" data-close-info></div>
     <article class="modal__content">
       <button class="modal__close" type="button" data-close-info aria-label="Close dialog"><i class="bx bx-x" aria-hidden="true"></i></button>
       <div class="modal__body">
         <p class="eyebrow" id="infoKicker">Project</p>
-        <h2 id="infoTitle">Coming soon</h2>
+        <h2 id="infoTitle">Unavailable</h2>
         <div id="infoBody"></div>
         <div class="modal__actions">
           <button class="btn btn--primary" type="button" data-close-info>Close</button>

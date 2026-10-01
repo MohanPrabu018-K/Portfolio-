@@ -8,6 +8,7 @@
 const projects = {
   internflow: {
     title: "InternFlow",
+    status: "completed",
     liveDemo: "",
     github: "https://github.com/MohanPrabu018-K/Internflow",
     report: "assets/reports/InternFlow-Project-Report.pdf",
@@ -15,6 +16,7 @@ const projects = {
   },
   taxshield: {
     title: "TaxShield",
+    status: "building",
     liveDemo: "",
     github: "",
     report: "",
@@ -22,15 +24,17 @@ const projects = {
   },
   agrosense: {
     title: "AgroSense AI",
+    status: "completed",
     liveDemo: "",
     github: "https://github.com/MohanPrabu018-K/Agro-Sense-AI-",
     report: "assets/reports/AgroSense-AI-Project-Report.pdf",
     reportStatus: "available"
   },
   fpp: {
-    title: "Faculty Patent Profile Verification System",
+    title: "Faculty Patent Verification Portal",
     shortTitle: "FPP",
-    liveDemo: "https://faculty-patent-portal.vercel.app",
+    status: "building",
+    liveDemo: "",
     github: "https://github.com/MohanPrabu018-K/Faculty-Patent-Collection-and-Verification-Portal",
     report: "assets/reports/FPP-Project-Report.pdf",
     reportStatus: "available"
@@ -57,7 +61,7 @@ const projectReports = {
   fpp: {
     title: "FPP — Project Report",
     status: "available",
-    content: `<p><strong>Faculty Patent Profile Verification System (Currently Building).</strong> Institutional portal collecting and verifying faculty patents/designs: FastAPI + PostgreSQL backend running a deterministic 11-agent document pipeline (classification, QR, OCR extraction, verification, identity, duplicate, conflict, association, quality, analytics) with a React + TypeScript frontend and human review of uncertain cases.</p><ul><li>Free-first: no Docker, no paid APIs; OCR degrades gracefully</li><li>Live demo: https://faculty-patent-portal.vercel.app</li><li>Repository: https://github.com/MohanPrabu018-K/Faculty-Patent-Collection-and-Verification-Portal</li></ul><div class="report-scope"><strong>Full professional report (PDF):</strong> <a href="assets/reports/FPP-Project-Report.pdf" target="_blank" rel="noopener noreferrer">Download / view the complete report</a></div>`
+    content: `<p><strong>Faculty Patent Verification Portal — FPP (Currently Building).</strong> Institutional portal collecting and verifying faculty patents/designs: FastAPI + PostgreSQL backend running a deterministic 11-step document verification pipeline (classification, QR, OCR extraction, verification, identity, duplicate, conflict, association, quality, analytics) with a React + TypeScript frontend and human review of uncertain cases. College team project.</p><ul><li>Free-first: no Docker, no paid APIs; local-first OCR with graceful fallback</li><li>Repository: https://github.com/MohanPrabu018-K/Faculty-Patent-Collection-and-Verification-Portal</li></ul><div class="report-scope"><strong>Full professional report (PDF):</strong> <a href="assets/reports/FPP-Project-Report.pdf" target="_blank" rel="noopener noreferrer">Download / view the complete report</a></div>`
   }
 };
 
@@ -106,7 +110,7 @@ const JOURNEY = [
   {
     title: "Current Chapter",
     role: "TaxShield • FPP",
-    body: "Currently building a tax-readiness intelligence platform and a patent-profile verification system.",
+    body: "Currently building a tax-readiness intelligence platform and the Faculty Patent Verification Portal.",
     list: ["TaxShield — currently working", "FPP — currently working"],
     meta: "In progress",
     here: true
@@ -123,39 +127,6 @@ const JOURNEY = [
 const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* ---------- Welcome (1–2s max, skippable) ---------- */
-function initWelcome() {
-  const welcome = $("#welcome");
-  const bar = $("#welcomeBar");
-  const enter = $("#welcomeEnter");
-  if (!welcome) return;
-  document.body.style.overflow = "hidden";
-  let done = false;
-  const finish = () => {
-    if (done) return;
-    done = true;
-    welcome.classList.add("hide");
-    document.body.style.overflow = "";
-    welcome.setAttribute("aria-hidden", "true");
-  };
-  enter.addEventListener("click", finish);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" || e.key === "Enter") finish();
-  });
-  // progress bar ~1.4s
-  const start = performance.now();
-  const dur = prefersReducedMotion() ? 100 : 1400;
-  const tick = (now) => {
-    const p = Math.min((now - start) / dur, 1);
-    if (bar) bar.style.width = `${p * 100}%`;
-    if (p < 1 && !done) requestAnimationFrame(tick);
-    else finish();
-  };
-  requestAnimationFrame(tick);
-  // hard cap 2s
-  setTimeout(finish, 2000);
-}
 
 /* ---------- Subtle ambient particles (very low opacity) ---------- */
 function initAmbient() {
@@ -247,7 +218,7 @@ function initNav() {
     toggle.setAttribute("aria-expanded", "false");
     toggle.querySelector("i").className = "bx bx-menu";
   }));
-  const sections = ["home", "about", "journey", "experience", "skills", "projects", "contact"]
+  const sections = ["home", "about", "experience", "projects", "skills", "journey", "resume", "contact"]
     .map((id) => document.getElementById(id)).filter(Boolean);
   const onScroll = () => {
     header.classList.toggle("scrolled", window.scrollY > 24);
@@ -414,11 +385,12 @@ function initTilt3D() {
     let tx = 0, ty = 0, cx = 0, cy = 0, running = false;
     const io = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
-      if (visible && (tx !== 0 || ty !== 0)) start();
+      if (visible) start();
     }, { threshold: 0.1 });
     io.observe(el);
 
     function frame() {
+      if (!visible) { running = false; return; } // suspend off-screen; IO resumes
       // smooth interpolation — no snapping
       cx += (tx - cx) * 0.12;
       cy += (ty - cy) * 0.12;
@@ -433,20 +405,19 @@ function initTilt3D() {
         shadow.style.transform = `translateX(${(-cx * 3).toFixed(1)}px)`;
         shadow.style.opacity = cx === 0 && cy === 0 ? "" : "0.85";
       }
-      if ((cx !== tx || cy !== ty) && visible) {
+      if (cx !== tx || cy !== ty) {
         requestAnimationFrame(frame);
       } else {
         running = false;
       }
     }
     function start() {
-      if (running || !visible) return;
+      if (running) return;
       running = true;
       requestAnimationFrame(frame);
     }
 
     el.addEventListener("pointermove", (e) => {
-      if (!visible) return;
       if (e.pointerType && e.pointerType !== "mouse") return;
       const r = el.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width - 0.5;
@@ -485,11 +456,12 @@ function initBuildingTilt() {
 
     const io = new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
-      if (visible && (targetRX !== 0 || targetRY !== 0)) start();
+      if (visible && hovering) start();
     }, { threshold: 0.1 });
     io.observe(card);
 
     function frame() {
+      if (!visible) { running = false; return; } // suspend off-screen; IO resumes
       currentRX += (targetRX - currentRX) * 0.14;
       currentRY += (targetRY - currentRY) * 0.14;
       if (Math.abs(targetRX - currentRX) < 0.01) currentRX = targetRX;
@@ -506,13 +478,12 @@ function initBuildingTilt() {
       }
     }
     function start() {
-      if (running || !visible) return;
+      if (running) return;
       running = true;
       requestAnimationFrame(frame);
     }
 
     card.addEventListener("pointermove", (e) => {
-      if (!visible) return;
       if (e.pointerType && e.pointerType !== "mouse") return;
       const r = card.getBoundingClientRect();
       pointerX = (e.clientX - r.left) / r.width - 0.5;
@@ -569,42 +540,85 @@ function initProjectModals() {
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+  // Report buttons only: live/GitHub CTAs are real links or disabled states (see initProjectCTAs)
   document.addEventListener("click", (e) => {
-    const btn = e.target.closest("[data-action][data-project]");
+    const btn = e.target.closest('[data-action="report"][data-project]');
     if (!btn) return;
     const key = btn.dataset.project;
-    const action = btn.dataset.action;
     const cfg = projects[key];
     if (!cfg) return;
     const name = cfg.shortTitle || cfg.title;
+    const rep = projectReports[key];
+    if (rep && (rep.status === "available" || rep.content)) {
+      open(name, rep.title, `<div>${rep.content}</div>`);
+      return;
+    }
+    if (cfg.report) { window.open(cfg.report, "_blank", "noopener,noreferrer"); return; }
+    open(name, `${name} — Project Report`,
+      `<p><strong>Report in progress.</strong> The detailed project report is currently being prepared.</p>
+       <p>It will include:</p>
+       <ul>${REPORT_OUTLINE.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>`);
+  });
+}
 
-    if (action === "live") {
-      if (cfg.liveDemo) { window.open(cfg.liveDemo, "_blank", "noopener,noreferrer"); return; }
-      open(name, "Live Demo Coming Soon",
-        `<p>The live demo link will be added here soon. This project demo is currently being prepared.</p>
-         <div class="report-scope"><strong>Demo link will be added soon.</strong></div>`);
-    }
-    if (action === "github") {
-      if (cfg.github) { window.open(cfg.github, "_blank", "noopener,noreferrer"); return; }
-      open(name, "GitHub Repository Coming Soon",
-        `<p>The repository link will be added here once it is ready.</p>
-         <div class="report-scope"><strong>Repository will be added soon.</strong></div>`);
-    }
-    if (action === "report") {
-      const rep = projectReports[key];
-      if (rep && (rep.status === "available" || rep.content)) {
-        open(name, rep.title, `<div>${rep.content}</div>`);
-        return;
+/* ---------- Project CTAs: real links only, honest disabled states ----------
+   URLs come from `projects`. Missing URL = visibly disabled button, never a
+   fake link or a misleading modal. FPP demo is paused until redeployed. */
+function initProjectCTAs() {
+  const demoLabel = (key) => (key === "fpp" ? "Demo paused" : "Demo unavailable");
+  Object.keys(projects).forEach((key) => {
+    const cfg = projects[key];
+    const liveBtn = document.querySelector(`[data-action="live"][data-project="${key}"]`);
+    const gitBtn = document.querySelector(`[data-action="github"][data-project="${key}"]`);
+    if (liveBtn) {
+      if (cfg.liveDemo) {
+        const a = document.createElement("a");
+        a.href = cfg.liveDemo;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = liveBtn.className;
+        a.innerHTML = liveBtn.innerHTML;
+        liveBtn.replaceWith(a);
+      } else {
+        liveBtn.disabled = true;
+        liveBtn.removeAttribute("data-action");
+        liveBtn.innerHTML = `<i class="bx bx-link-external" aria-hidden="true"></i> ${demoLabel(key)}`;
+        if (cfg.github && gitBtn) {
+          gitBtn.classList.remove("btn--secondary");
+          gitBtn.classList.add("btn--primary");
+        }
       }
-      if (cfg.report) { window.open(cfg.report, "_blank", "noopener,noreferrer"); return; }
-      open(name, `${name} — Project Report`,
-        `<p><strong>Project Report Coming Soon.</strong> The detailed project report is currently being prepared.</p>
-         <p>It will include:</p>
-         <ul>${REPORT_OUTLINE.map((o) => `<li>${esc(o)}</li>`).join("")}</ul>
-         <div class="report-scope"><strong>Detailed report will be available soon.</strong> Report will be added here soon.</div>`);
+    }
+    if (gitBtn) {
+      if (cfg.github) {
+        const a = document.createElement("a");
+        a.href = cfg.github;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = gitBtn.className;
+        a.innerHTML = gitBtn.innerHTML;
+        gitBtn.replaceWith(a);
+      } else {
+        gitBtn.disabled = true;
+        gitBtn.removeAttribute("data-action");
+        gitBtn.innerHTML = `<i class="bx bxl-github" aria-hidden="true"></i> GitHub unavailable`;
+      }
     }
   });
+}
 
+/* ---------- Hero proof line (computed from project config) ---------- */
+function initHeroProof() {
+  const el = $("#heroProof");
+  if (!el) return;
+  const keys = Object.keys(projects);
+  const done = keys.filter((k) => projects[k].status === "completed").length;
+  const active = keys.length - done;
+  el.innerHTML = `<strong>Company-used system</strong> · ${done} completed builds · ${active} active builds`;
+}
+
+/* ---------- Deep links: building cards + architecture links ---------- */
+function initDeepLinks() {
   // deep-link from Currently Building cards + architecture links
   const highlight = (el) => {
     el.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "center" });
@@ -654,7 +668,6 @@ function initContact() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initWelcome();
   initAmbient();
   initTheme();
   initNav();
@@ -664,6 +677,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initTilt3D();
   initBuildingTilt();
   initBook();
+  initProjectCTAs();
   initProjectModals();
+  initDeepLinks();
+  initHeroProof();
   initContact();
 });
